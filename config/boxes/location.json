@@ -1,0 +1,9 @@
+{
+	"engine": "location",
+	"has_categories": true,
+	"fields": {
+		"background_color": "color",
+		"latitude": "text",
+		"longitude": "text"
+	}
+}
