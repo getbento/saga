@@ -1,0 +1,20 @@
+<h2 class="pull-out__title">
+  Mailing List
+</h2>
+{% include "template-parts/newsletter-condensed.html" %}
+
+{% if theme.options.navigation.logos|length > 0 %}
+<ul class="pull-out__logos">
+  {% for logo in theme.options.navigation.logos %}
+  <li class="pull-out__logos-item">
+    <a class="pull-out__logos-item__link" href="{{ logo.link.url }}"
+    {% if logo.link.target %}
+    target="_blank"
+    {% endif %}
+    >
+      <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt_text }}" class="pull-out__logos-item__logo">
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
