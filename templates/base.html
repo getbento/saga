@@ -199,27 +199,40 @@
     </div>
 
     <footer class="site-footer">
-      <div class="site-footer__left">
-        <!-- LOGO -->
-      </div>
-      <div class="site-footer__right">
-        <nav class="site-footer__nav">
-          {% if navs.footer|length != 0 %}
-          <ul class="site-footer__nav__list">
-            {% for item in navs.footer %}
-              <li class="site-footer__nav__list-item">
-                <a class="site-footer__nav__list-item__link" href="{{ item.url }}">{{ item.name }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+      <div class="container-margins site-footer__container">
+        <div class="site-footer__left">
+          <p class="site-footer__branding">
+            <a href="{{ account.site.url }}" class="site-footer__branding-link" rel="home">
+              {% include "svg/logo.html" %} <span class="screen-reader-text">Home</span>
+            </a>
+          </p>
+        </div>
+        <div class="site-footer__right">
+          {% if theme.options.footer.blurb %}
+          <div class="site-footer__blurb">
+            {{ theme.options.footer.blurb }}
+          </div>
           {% endif %}
-          {% if navs.footer|length == 0 %}
-            <em>Add nav items in the Pages/Nav sections of the admin to see your footer nav</em>
+          <nav class="site-footer__nav">
+            {% if navs.footer|length != 0 %}
+            <ul class="site-footer__nav__list">
+              {% for item in navs.footer %}
+                <li class="site-footer__nav__list-item">
+                  <a class="site-footer__nav__list-item__link" href="{{ item.url }}">{{ item.name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            {% if navs.footer|length == 0 %}
+              <em>Add nav items in the Pages/Nav sections of the admin to see your footer nav</em>
+            {% endif %}
+          </nav>
+          {% if theme.options.footer.copyright %}
+          <div class="site-footer__trampstamp">
+            {{ theme.options.footer.copyright }}
+          </div>
           {% endif %}
-        </nav>
-        <p class="site-footer__trampstamp">
-          © 2020 SAGA. All rights reserved. Designed by <a href="https://wearecmyk.com/">CMYK</a>
-        </p>
+        </div>
       </div>
     </footer>
 </div>

@@ -47,6 +47,7 @@
         }
         &__link {
           @include button-style;
+          text-decoration: none;
         }
       }
     }
@@ -185,17 +186,19 @@
     &-link {
       display: block;
       transition: color 300ms $bezier;
+      text-decoration: none;
+      width: 26.4rem;
+      @include for-size(mobile) {
+        width: 20rem;
+      }
       &:hover, &:focus {
         color: $peach;
       }
       svg {
-        width: 26.4rem;
+        width: 100%;
         height: auto;
-        @include for-size(mobile) {
-          width: 20rem;
-          height: auto;
-        }
       }
+      @include logo-hover;
     }
   } &__left {
     @include flex(1,0,0);
@@ -239,6 +242,7 @@
           transition: transform 600ms $bezier, opacity 600ms $bezier;
           transform: translateY(100%);
           opacity: 0;
+          text-decoration: none;
           &:hover, &:focus {
             font-weight: 500;
             color: $peach;
@@ -314,6 +318,7 @@
       &__link {
         display: block;
         transition: transform 300ms $bezier;
+        text-decoration: none;
         &:hover, &:focus {
           transform: scale(1.03);
         }

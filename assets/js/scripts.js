@@ -14,6 +14,12 @@ const mobileBreakpoint = 767;
   /* Mobile Navigation */
     var isMenuOpen = false;
 
+const handleKeypressADA = function() {
+  const keycode = (event.keyCode ? event.keyCode : event.which);
+  if (keycode == '13') return;
+  $(this).trigger('click');
+};
+
 $(document).ready(function(){
   /* Menu */
   $('.pull-out__toggle').on('click', function(){
@@ -22,9 +28,7 @@ $(document).ready(function(){
     $(this).attr('aria-expanded', isMenuOpen);
     $(this).toggleClass('active');
     $('.pull-out, .pull-out__background').toggleClass('active');
-  }).on('keypress', function(){
-    $(this).trigger('click');
-  });
+  }).on('keypress', handleKeypressADA);
 
   $('.pull-out__nav__list-item__link').each(function(index){
     $(this).on('mouseover', function(){

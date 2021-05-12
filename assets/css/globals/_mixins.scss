@@ -29,7 +29,7 @@
 }
 
 @mixin content-margins {
-  width: calc(100vw - calc(#{$content_desktop_margins} * 2));
+  width: calc(100% - calc(#{$content_desktop_margins} * 2));
   max-width: $content_desktop_max_width;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -41,7 +41,7 @@
 }
 
 @mixin container-margins {
-  width: calc(100vw - calc(#{$container_desktop_margins} * 2));
+  width: calc(100% - calc(#{$container_desktop_margins} * 2));
   max-width: $container_desktop_max_width;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -49,6 +49,15 @@
     max-width: $container_widescreen_max_width;
   } @include for-size(mobile) {
     width: calc(100vw - calc(#{$container_mobile_margins} * 2));
+  }
+}
+
+@mixin full-width {
+  @include for-size(no-mobile) {
+    width: 100vw;
+    position: relative;
+    left: -7.2rem;
+    padding-left: 7.2rem;
   }
 }
 
@@ -117,6 +126,35 @@
   &:focus, &:hover {
     background-color: $offwhite;
     color: $terblack;
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin logo-hover {
+  position: relative;
+  display: block;
+  svg {
+    transition: transform 600ms $bezier;
+  }
+  &::before {
+    content: '';
+    background-color: $offwhite;
+    width: 100%;
+    height: 0.4rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left bottom;
+    transition: transform 600ms $bezier;
+  }
+
+  &:hover, &:focus {
+    svg {
+      transform: translateY(-0.8rem);
+    }
     &::before {
       transform: scale(1);
     }
