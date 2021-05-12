@@ -1,0 +1,15 @@
+{
+	"name": "Contact Page",
+	"fields": {
+		"content": {
+			"title": "Content",
+			"type": "section",
+			"items": {
+				"content": "wysiwyg"
+			}
+		}
+	},
+	"wireframe": [
+    "section-content"
+  ]
+}

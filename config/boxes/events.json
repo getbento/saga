@@ -1,3 +1,13 @@
 {
-	"engine": "event"
+	"engine": "event",
+	"fields": {
+		"location": {
+			"title": "Location",
+			"type": "text"
+		},
+		"ticket": {
+			"title": "Ticket",
+			"type": "text"
+		}
+	}
 }

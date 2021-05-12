@@ -1,0 +1,100 @@
+@mixin for-size($size) {
+  @if $size == mobile {
+    @media (max-width: $mobile_max) { @content; }
+  } @else if $size == tablet {
+    @media (min-width: $tablet_min) and (max-width: $tablet_max) { @content; }
+  } @else if $size == desktop {
+    @media (min-width: $desktop_min) { @content; }
+  } @else if $size == no-mobile {
+    @media (min-width: $tablet_min) { @content; }
+  } @else if $size == no-desktop {
+    @media (max-width: $tablet_max) { @content; }
+  } @else if $size == widescreen {
+    @media (min-width: $widescreen_min) { @content; }
+  }
+}
+
+@mixin reset-appearance() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+@mixin content-margins {
+  width: calc(100vw - calc(#{$content_desktop_margins} * 2));
+  max-width: $content_desktop_max_width;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  @include for-size(widescreen) {
+    max-width: $content_widescreen_max_width;
+  } @include for-size(mobile) {
+    width: calc(100vw - calc(#{$content_mobile_margins} * 2));
+  }
+}
+
+@mixin container-margins {
+  width: calc(100vw - calc(#{$container_desktop_margins} * 2));
+  max-width: $container_desktop_max_width;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  @include for-size(widescreen) {
+    max-width: $container_widescreen_max_width;
+  } @include for-size(mobile) {
+    width: calc(100vw - calc(#{$container_mobile_margins} * 2));
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    @content;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    @content;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    @content;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+}
+
+@mixin max($property, $val, $val2) {
+  #{$property}: m#{a}x(#{$val}, #{$val2});
+}
+
+@mixin min($property, $val, $val2) {
+  #{$property}: m#{i}n(#{$val}, #{$val2});
+}
+
+@mixin flex($grow, $shrink, $basis) {
+  flex-grow: $grow;
+  flex-shrink: $shrink;
+  flex-basis: $basis;
+}
+
+@mixin input-style($color: inherit) {
+  @include reset-appearance;
+
+  @include placeholder {
+
+  } &:focus {
+    // TODO: ADD TEXT INPUT FOCUS STYLES
+  }
+}
+
+@mixin button-style($color: inherit) {
+  @include reset-appearance;
+
+  &:focus, &:hover {
+
+  }
+}

@@ -1,0 +1,17 @@
+/*--------------------------------*\
+    GLOBALS
+\*--------------------------------*/
+  /* for mixins, variables, and global styles */
+  @import "globals/variables";
+  @import "globals/colors";
+  @import "globals/fonts";
+  @import "globals/mixins";
+  @import "globals/main";
+
+ /*--------------------------------*\
+    STRUCTURE
+ \*--------------------------------*/
+   /* for global site structure */
+  @import "structure/navigation";
+  @import "structure/footer";
+  @import "structure/page";

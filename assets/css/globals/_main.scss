@@ -1,0 +1,103 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  font-size: 62.5% !important;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  @media screen and (max-width: 340px) {
+    font-size: 50% !important;
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  color: $white;
+  background-color: #0D0D0D;
+  background-image: linear-gradient(180deg, #0D0D0D 0%, #0B0B0A 99.44%, #0B0B0A 100%);
+  background-size: 100% 100%;
+  font-family: $futura;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1{
+ @include h1-style;
+}
+
+h2{
+  @include h2-style;
+}
+
+h3{
+  @include h3-style;
+}
+
+h4{
+  @include h4-style;
+}
+
+h5{
+  @include h5-style;
+}
+
+h6{
+  @include h6-style;
+}
+
+p{
+  @include p-style;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input, button {
+  @include reset-appearance;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+}
+
+.container-margins {
+  @include container-margins;
+}
+
+.content-margins {
+  @include content-margins;
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+svg {
+  fill: currentColor;
+  stroke: currentColor;
+}

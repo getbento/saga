@@ -1,16 +1,23 @@
 {
-	"name": "Menus Page",
+	"name": "Menu Page",
 	"fields": {
-		"prepared": {
-			"title": "Prepared By",
+		"content": {
+			"title": "Content",
 			"type": "section",
 			"items": {
-				"image": "image",
-				"description": "wysiwyg"
+				"content": "wysiwyg"
+			}
+		},
+		"gallery": {
+			"title": "Gallery",
+			"type": "section",
+			"items": {
+				"image": "image"
 			}
 		}
 	},
 	"wireframe": [
-		"section-prepared"
-	]
+    "section-content",
+		"section-gallery"
+  ]
 }

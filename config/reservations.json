@@ -1,0 +1,46 @@
+{
+	"name": "Reservations Page",
+	"fields": {
+		"reservations": {
+			"title": "Reservations",
+			"type": "section",
+			"items": {
+				"reservations": {
+		      "title": "Reservations",
+		      "type": "repeater",
+		      "items": {
+		        "title": {
+		          "title": "Title",
+		          "type": "text"
+		        },
+		        "phone": {
+		          "title": "Phone Number",
+		          "type": "text"
+		        },
+		        "link": {
+							"title": "Link",
+							"type": "section",
+							"items": {
+								"url": {
+									"title": "URL",
+									"type": "text"
+								},
+								"copy": {
+									"title": "Copy",
+									"type": "text"
+								},
+								"target": {
+									"title": "Open link in new tab?",
+									"type": "boolean"
+								}
+							}
+						}
+		      }
+		    }
+			}
+		}
+	},
+	"wireframe": [
+		"section-reservations"
+	]
+}

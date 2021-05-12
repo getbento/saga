@@ -1,0 +1,90 @@
+{
+	"engine": "location",
+	"has_categories": true,
+	"fields": {
+		"subtitle": "text",
+		"floorplan": {
+			"title": "Floor Plan",
+			"type": "section",
+			"items": {
+				"image": "image"
+			}
+		},
+		"overview": {
+			"title": "Overview",
+			"type": "section",
+			"items": {
+				"content": "wysiwyg",
+				"links": {
+					"title": "Links",
+					"type": "repeater",
+					"items": {
+						"link": {
+							"title": "Link",
+							"type": "section",
+							"items": {
+								"url": {
+									"title": "URL",
+									"type": "text"
+								},
+								"copy": {
+									"title": "Copy",
+									"type": "text"
+								},
+								"target": {
+									"title": "Open link in new tab?",
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"description": {
+			"title": "Description",
+			"type": "section",
+			"items": {
+				"content": "wysiwyg",
+				"links": {
+					"title": "Links",
+					"type": "repeater",
+					"items": {
+						"link": {
+							"title": "Link",
+							"type": "section",
+							"items": {
+								"url": {
+									"title": "URL",
+									"type": "text"
+								},
+								"copy": {
+									"title": "Copy",
+									"type": "text"
+								},
+								"target": {
+									"title": "Open link in new tab?",
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"gallery": {
+			"title": "Gallery",
+			"type": "section",
+			"items": {
+				"title": "text",
+				"images": {
+					"title": "Images",
+					"type": "repeater",
+					"items": {
+						"image": "image"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,235 @@
+/*
+ * Font Stacks
+ *
+ ***************************/
+ /*
+  * FUTURA
+  *   @weights
+  *    + Light: 300
+  *    + Book: 400
+  *    + Medium: 500
+  *    + Demi: 600
+  *    + Heavy: 700
+  */
+$futura: futura-pt, sans-serif;
+
+ /*
+  * Font Styles
+  *
+  * @parameter $responsive : boolean, whether the font style needs responsive styles
+  * @parameter $mobile : boolean, whether to only output mobile style
+  ***************************/
+   /* H1 */
+   @mixin h1-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include h1-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include h1-mobile-style;
+         }
+       }
+     } @else {
+       @include h1-mobile-style;
+     }
+   }
+     /* H1 components */
+     @mixin h1-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin h1-mobile-style {
+
+     }
+   /* H2 */
+   @mixin h2-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include h2-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include h2-mobile-style;
+         }
+       }
+     } @else {
+       @include h2-mobile-style;
+     }
+   }
+     /* H2 Components */
+     @mixin h2-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin h2-mobile-style {
+
+     }
+   /* H3 */
+   @mixin h3-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include h3-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include h3-mobile-style;
+         }
+       }
+     } @else {
+       @include h3-mobile-style;
+     }
+   }
+     /* H3 Components */
+     @mixin h3-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin h3-mobile-style {
+
+     }
+   /* H4 */
+   @mixin h4-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include h4-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include h4-mobile-style;
+         }
+       }
+     } @else {
+       @include h4-mobile-style;
+     }
+   }
+     /* H4 Components */
+     @mixin h4-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin h4-mobile-style {
+
+     }
+   /* H5 */
+   @mixin h5-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include h5-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include h5-mobile-style;
+         }
+       }
+     } @else {
+       @include h5-mobile-style;
+     }
+   }
+     /* H5 Components */
+     @mixin h5-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin h5-mobile-style {
+
+     }
+   /* H6 */
+   @mixin h6-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include h6-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include h6-mobile-style;
+         }
+       }
+     } @else {
+       @include h6-mobile-style;
+     }
+   }
+     /* H6 Components */
+     @mixin h6-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin h6-mobile-style {
+
+     }
+   /* Paragraph */
+   @mixin p-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include p-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include p-mobile-style;
+         }
+       }
+     } @else {
+       @include p-mobile-style;
+     }
+   }
+     /* Paragraph Components */
+     @mixin p-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin p-mobile-style {
+
+     }
+   /* Nav Font */
+   @mixin nav-font-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include nav-font-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include nav-font-mobile-style;
+         }
+       }
+     } @else {
+       @include nav-font-mobile-style;
+     }
+   }
+     /* Nav Font Components */
+     @mixin nav-font-desktop-style {
+       font-family: inherit;
+       font-weight: normal;
+       font-size: 100%;
+       line-height: normal;
+       letter-spacing: normal;
+       text-transform: none;
+     }
+
+     @mixin nav-font-mobile-style {
+
+     }
+
+ @mixin drop-cap {
+   &:not(:focus)::first-letter {
+     @content;
+   }
+ }

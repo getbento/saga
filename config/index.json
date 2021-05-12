@@ -1,3 +1,76 @@
 {
-	"name" : "Homepage"
+  "name": "Homepage",
+  "fields":{
+		"welcome": {
+			"title": "Welcome",
+			"type": "section",
+			"items": {
+				"title": {
+					"title": "Title",
+					"type": "text"
+				},
+				"content": {
+					"title": "Content",
+					"type": "wysiwyg"
+				}
+			}
+		},
+    "content": {
+      "title": "Content",
+      "type": "section",
+      "items": {
+        "sections": {
+          "title": "Sections",
+    			"type": "repeater",
+    			"items": {
+    				"title": {
+    					"title": "Title",
+    					"type": "text"
+    				},
+    				"content": {
+    					"title": "Content",
+    					"type": "wysiwyg"
+    				}
+    			}
+        }
+  		}
+    },
+		"crownshy": {
+			"title": "Crown Shy",
+			"type": "section",
+			"items": {
+				"link": {
+					"title": "Link",
+					"type": "section",
+					"items": {
+						"url": {
+							"title": "URL",
+							"type": "text"
+						},
+						"copy": {
+							"title": "Copy",
+							"type": "text"
+						},
+						"target": {
+							"title": "Open link in new tab?",
+							"type": "boolean"
+						}
+					}
+				},
+				"copy": {
+					"title": "Hover Copy",
+					"type": "text"
+				},
+				"logo": {
+					"title": "Logo",
+					"type": "image"
+				}
+			}
+		}
+  },
+  "wireframe": [
+    "section-welcome",
+    "section-content",
+    "section-crownshy"
+  ]
 }
