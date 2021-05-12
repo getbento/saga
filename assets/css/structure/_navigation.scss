@@ -1,0 +1,550 @@
+.site-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  &__container {
+    width: 100vh;
+    height: 7.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform-origin: right top;
+    transform: translateX(-100%) rotate(-90deg);
+    > * {
+      z-index: 1;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 0.04rem;
+      width: 100%;
+      background: $offwhite;
+      z-index: 4;
+      @include for-size(mobile) {
+        display: none;
+        content: unset;
+      }
+    }
+  }
+
+  &__nav {
+    margin-right: 2.4rem;
+    @include for-size(mobile) {
+      display: none;
+    }
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-item {
+        margin-right: 2.4rem;
+        &:last-child {
+          margin-right: 0;
+        }
+        &__link {
+          @include button-style;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.pull-out {
+  position: fixed;
+  left: 7.2rem;
+  top: 0;
+  width: calc(100% - 7.2rem);
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  transition: 500ms $bezier;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  padding: 12rem 0;
+  @include for-size(mobile) {
+    top: 7.2rem;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 7.2rem);
+    padding: 0;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.2rem;
+    height: 7.2rem;
+    background: $terblack;
+    color: $peach;
+    position: relative;
+    z-index: 3;
+    transition: color 600ms $bezier, background 600ms $bezier;
+    @include for-size(mobile) {
+      border: 1px solid rgba($peach, 0.4);
+    }
+    .hamburger-icon {
+      transform: rotate(90deg);
+    } &:hover, &:focus {
+      background: $offwhite;
+      color: $terblack;
+    }
+  } &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 500ms $bezier;
+    background-color: #0D0D0D;
+    pointer-events: none;
+    z-index: 2;
+    transform: translateX(100vh) rotate(90deg);
+    transform-origin: left top;
+    &__img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: opacity 400ms $bezier, transform 400ms $bezier;
+      transform: scale(1.03);
+      &.hover {
+        opacity: 0;
+        &.active {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    } &__hover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    } &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($black, 0.7);
+      z-index: 3;
+    }
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+      .pull-out__background__img {
+        &:not(.hover) {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__margins {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: calc(100% - 2.4rem);
+    max-width: 71.2rem;
+    @include for-size(mobile) {
+      width: 100%;
+      margin: 0;
+      padding: 3rem;
+      max-width: 100%;
+    }
+  }
+
+  &__branding {
+    @include flex(0,0,100%);
+    margin-bottom: 4rem;
+    @include for-size(mobile) {
+      margin-bottom: 3.2rem;
+    }
+    &-link {
+      display: block;
+      transition: color 300ms $bezier;
+      text-decoration: none;
+      width: 26.4rem;
+      @include for-size(mobile) {
+        width: 20rem;
+      }
+      &:hover, &:focus {
+        color: $peach;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+      }
+      @include logo-hover;
+    }
+  } &__left {
+    @include flex(1,0,0);
+    @include for-size(mobile) {
+      @include flex(0,0,50%);
+    }
+  } &__right {
+    @include flex(0,0,27.2rem);
+    @include for-size(mobile) {
+      @include flex(0,0,calc(50% - 3.6rem));
+    }
+  } &__mobilefooter {
+    display: none;
+    @include for-size(mobile) {
+      display: block;
+      @include flex(0,0,100%);
+    }
+  } &__desktopfooter {
+    @include for-size(mobile) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    &__list {
+      &-item {
+        overflow: hidden;
+        transform: translateY(4px);
+        margin-top: 2rem;
+        transition: transform 600ms $bezier;
+        @include for-size(mobile) {
+          margin-top: 1.6rem;
+          margin-bottom: 2.4rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &__link {
+          display: block;
+          @include pullout-nav-font-style;
+          transition: transform 600ms $bezier, opacity 600ms $bezier;
+          transform: translateY(100%);
+          opacity: 0;
+          text-decoration: none;
+          &:hover, &:focus {
+            font-weight: 500;
+            color: $peach;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.25rem;
+    color: $peach;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    @include for-size(mobile) {
+      font-size: 1.6rem;
+      line-height: 2.1rem;
+      letter-spacing: 0.222rem;
+    }
+  } &__address {
+    @include p-style;
+    margin-bottom: 5.4rem;
+    > span {
+      display: block;
+      position: relative;
+      transition: transform 600ms $bezier;
+      transform: translateY(4px);
+      overflow: hidden;
+      > span {
+        display: block;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 600ms $bezier, opacity 600ms $bezier;
+      }
+    }
+  } &__hours {
+    margin-bottom: 5.4rem;
+    &-item {
+      @include p-style;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      > span {
+        display: block;
+        overflow: hidden;
+        transform: translateY(4px);
+        transition: transform 600ms $bezier;
+        > span {
+          display: block;
+          transform: translateY(100%);
+          opacity: 0;
+          transition: transform 600ms $bezier, opacity 600ms $bezier;
+        }
+      }
+
+      @include for-size(mobile) {
+        display: block;
+      }
+    }
+  } &__logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-item {
+      @include flex(0,0,6.8rem);
+      &__link {
+        display: block;
+        transition: transform 300ms $bezier;
+        text-decoration: none;
+        &:hover, &:focus {
+          transform: scale(1.03);
+        }
+      } &__logo {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 60ms;
+    .pull-out {
+      &__nav {
+        &__list {
+          &-item {
+            transform: translateY(0);
+            &__link {
+              transform: translateY(0);
+              opacity: 1;
+            }
+            @for $i from 1 through 10 {
+              &:nth-child(#{$i}) {
+                transition-delay: #{ ($i * 60ms) - 60ms };
+                .pull-out__nav__list-item__link {
+                  transition-delay: #{ ($i * 60ms) - 60ms };
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__address {
+        > span {
+          transform: translateY(0);
+          > span {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+              transition-delay: #{ ($i * 60ms) + 120ms };
+              > span {
+                transition-delay: #{ ($i * 60ms) + 120ms };
+              }
+            }
+          }
+        }
+      }
+
+      &__hours {
+        &-item {
+          > span {
+            transform: translateY(0);
+            > span {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+
+          @for $i from 1 through 7 {
+            &:nth-child(#{$i}) {
+              > span {
+                transition-delay: #{ ($i * 60ms) + 180ms };
+                > span {
+                  transition-delay: #{ ($i * 60ms) + 180ms };
+                }
+
+                &:last-child {
+                  @include for-size(mobile) {
+                    transition-delay: #{ ($i * 60ms) + 340ms };
+                    > span {
+                      transition-delay: #{ ($i * 60ms) + 340ms };
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hamburger-icon {
+  width: 2.8rem;
+  height: 2rem;
+  position: relative;
+  color: inherit;
+  &__inactive {
+    position: absolute;
+    left: calc(50% - 1.4rem);
+    top: calc(50% - 1rem);
+    width: 2.8rem;
+    height: 2rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: column;
+  } &__active {
+    position: absolute;
+    left: calc(50% - 0.8rem);
+    top: calc(50% - 0.8rem);
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+  }
+  &__line {
+    width: 2.8rem;
+    height: 0.1rem;
+    background: currentColor;
+    transform-origin: left center;
+    transition: transform 300ms $bezier;
+    &:nth-child(1) {
+      transition-delay: 300ms;
+    } &:nth-child(2) {
+      transition-delay: 400ms;
+    } &:nth-child(3) {
+      transition-delay: 500ms;
+    }
+  } &__cross {
+    width: 2rem;
+    height: 0.1rem;
+    background: currentColor;
+    position: absolute;
+    transition: transform 300ms $bezier;
+    &:first-child {
+      left: 0.1rem;
+      top: 0;
+      transform-origin: left center;
+      transform: rotate(45deg) scaleX(0);
+    } &:last-child {
+      right: 0.1rem;
+      top: 0;
+      transform-origin: right center;
+      transform: rotate(-45deg) scaleX(0);
+    }
+  }
+}
+
+.pull-out__toggle {
+  &.active {
+    .hamburger-icon {
+      &__line {
+        transform: scaleX(0);
+        &:nth-child(1) {
+          transition-delay: 0ms;
+        } &:nth-child(2) {
+          transition-delay: 100ms;
+        } &:nth-child(3) {
+          transition-delay: 200ms;
+        }
+      }
+      &__cross {
+        &:first-child {
+          transition-delay: 500ms;
+          transform: rotate(45deg) scaleX(1);
+        } &:last-child {
+          transition-delay: 600ms;
+          transform: rotate(-45deg) scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+.newsletter-form {
+  &.condensed {
+    position: relative;
+    margin-bottom: 5.6rem;
+    @include for-size(mobile) {
+      margin-bottom: 4rem;
+    }
+    .newsletter-form {
+      &__label {
+        display: block;
+      }
+      &__email {
+        @include p-style(false);
+        line-height: 2.3rem;
+        letter-spacing: 0.1rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid rgba($offwhite, 0.4);
+        padding-right: 2.6rem;
+        width: 100%;
+        transition: background 300ms $bezier, border 300ms $bezier;
+        @include placeholder {
+          @include p-style(false);
+          line-height: 2.3rem;
+          letter-spacing: 0.1rem;
+        } &:focus {
+          border-bottom-color: rgba($peach, 0.8);
+        }
+      } &__submit {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 3.2rem;
+        height: 3.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        transition: color 300ms $bezier, background 300ms $bezier;
+        padding-bottom: 0.8rem;
+        svg {
+          transition: transform 300ms $bezier;
+        }
+        &:hover, &:focus {
+          color: $terblack;
+          background-color: $offwhite;
+          svg {
+            transform: translateX(-1.2rem) translateY(0.4rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+#page {
+  @include for-size(no-mobile) {
+    padding-left: 7.2rem;
+  }
+}

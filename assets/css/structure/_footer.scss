@@ -1,0 +1,104 @@
+.site-footer {
+  @include full-width;
+  background-color: $pmsblack;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include for-size(mobile) {
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+  } &__left {
+    @include flex(0,0,24.8rem);
+    margin-right: 6rem;
+    @include for-size(mobile) {
+      @include flex(1,1,auto);
+      margin-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  } &__right {
+    @include flex(1,0,0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    @include for-size(mobile) {
+      @include flex(1,1,auto);
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__branding {
+    margin: 0;
+    @include for-size(mobile) {
+      margin-bottom: 2rem;
+    }
+    &-link {
+      margin: 0;
+      display: block;
+      @include for-size(mobile) {
+        max-width: 17.6rem;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+      }
+
+      @include logo-hover;
+    }
+  }
+
+  &__nav {
+    margin-top: 2rem;
+    @include for-size(mobile) {
+      margin-top: 4rem;
+      width: 100%;
+    }
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      @include for-size(mobile) {
+        width: 100%;
+        justify-content: space-between;
+      }
+      &-item {
+        margin-left: 3.6rem;
+        @include for-size(mobile) {
+          margin-left: 0;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &__link {
+          @include footer-nav-font-style;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__blurb {
+    > * {
+      @include p-style;
+      letter-spacing: 0.12rem;
+    }
+  }
+
+  &__trampstamp {
+    margin-top: 4.8rem;
+    > * {
+      font-size: 1rem;
+      line-height: 1.4rem;
+      letter-spacing: 0.067rem;
+    }
+  }
+}

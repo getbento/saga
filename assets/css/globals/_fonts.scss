@@ -34,11 +34,11 @@ $futura: futura-pt, sans-serif;
    }
      /* H1 components */
      @mixin h1-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
-       letter-spacing: normal;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 6.4rem;
+       line-height: 4.4rem;
+       letter-spacing: 0.25remx;
        text-transform: none;
      }
 
@@ -60,11 +60,11 @@ $futura: futura-pt, sans-serif;
    }
      /* H2 Components */
      @mixin h2-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
-       letter-spacing: normal;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 4.6rem;
+       line-height: 5.9rem;
+       letter-spacing: 0.25rem;
        text-transform: none;
      }
 
@@ -86,11 +86,11 @@ $futura: futura-pt, sans-serif;
    }
      /* H3 Components */
      @mixin h3-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
-       letter-spacing: normal;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 3.5rem;
+       line-height: 4.5rem;
+       letter-spacing: 0.365rem;
        text-transform: none;
      }
 
@@ -112,11 +112,11 @@ $futura: futura-pt, sans-serif;
    }
      /* H4 Components */
      @mixin h4-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
-       letter-spacing: normal;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 2.6rem;
+       line-height: 2.6rem;
+       letter-spacing: 0.25rem;
        text-transform: none;
      }
 
@@ -138,12 +138,12 @@ $futura: futura-pt, sans-serif;
    }
      /* H5 Components */
      @mixin h5-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 2rem;
+       line-height: 2.6rem;
        letter-spacing: normal;
-       text-transform: none;
+       text-transform: uppercase;
      }
 
      @mixin h5-mobile-style {
@@ -164,12 +164,12 @@ $futura: futura-pt, sans-serif;
    }
      /* H6 Components */
      @mixin h6-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 1.4rem;
+       line-height: 1.8rem;
        letter-spacing: normal;
-       text-transform: none;
+       text-transform: uppercase;
      }
 
      @mixin h6-mobile-style {
@@ -190,16 +190,21 @@ $futura: futura-pt, sans-serif;
    }
      /* Paragraph Components */
      @mixin p-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
-       letter-spacing: normal;
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 1.8rem;
+       line-height: 2.6rem;
+       letter-spacing: 0.14rem;
        text-transform: none;
      }
 
      @mixin p-mobile-style {
-
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 1.6rem;
+       line-height: 2.2rem;
+       letter-spacing: 0.089rem;
+       text-transform: none;
      }
    /* Nav Font */
    @mixin nav-font-style( $responsive : true, $mobile : false ) {
@@ -216,16 +221,78 @@ $futura: futura-pt, sans-serif;
    }
      /* Nav Font Components */
      @mixin nav-font-desktop-style {
-       font-family: inherit;
-       font-weight: normal;
-       font-size: 100%;
-       line-height: normal;
-       letter-spacing: normal;
-       text-transform: none;
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 1.2rem;
+       line-height: 1.6rem;
+       letter-spacing: 0.25rem;
+       text-transform: uppercase;
      }
 
      @mixin nav-font-mobile-style {
 
+     }
+   /* Nav Font */
+   @mixin pullout-nav-font-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include pullout-nav-font-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include pullout-nav-font-mobile-style;
+         }
+       }
+     } @else {
+       @include pullout-nav-font-mobile-style;
+     }
+   }
+     /* Nav Font Components */
+     @mixin pullout-nav-font-desktop-style {
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 4rem;
+       line-height: 5.1rem;
+       letter-spacing: 0.25rem;
+       text-transform: none;
+     }
+
+     @mixin pullout-nav-font-mobile-style {
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 2.6rem;
+       line-height: 2.6rem;
+       letter-spacing: 0.163rem;
+       text-transform: none;
+     }
+   /* Nav Font */
+   @mixin footer-nav-font-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include footer-nav-font-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include footer-nav-font-mobile-style;
+         }
+       }
+     } @else {
+       @include footer-nav-font-mobile-style;
+     }
+   }
+     /* Nav Font Components */
+     @mixin footer-nav-font-desktop-style {
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 1.2rem;
+       line-height: 1.6rem;
+       letter-spacing: 0.25rem;
+       text-transform: uppercase;
+     }
+
+     @mixin footer-nav-font-mobile-style {
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 1rem;
+       line-height: 1.6rem;
+       letter-spacing: 0.15rem;
+       text-transform: uppercase;
      }
 
  @mixin drop-cap {
