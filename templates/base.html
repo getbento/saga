@@ -198,6 +198,9 @@
       {% endblock %}
     </div>
 
+    {% if current.slug == 'index' %}
+    <div class="desktop-footer-hide">
+    {% endif %}
     <footer class="site-footer">
       <div class="container-margins site-footer__container">
         <div class="site-footer__left">
@@ -235,7 +238,23 @@
         </div>
       </div>
     </footer>
+    {% if current.slug == 'index' %}
+    </div>
+    {% endif %}
 </div>
+
+{% if current.slug == 'index' %}
+<script type="text/javascript">
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    window.scrollTo(0,document.body.scrollHeight);
+  }
+  window.addEventListener('load', function(){
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      window.scrollTo(0,document.body.scrollHeight);
+    }
+  });
+</script>
+{% endif %}
 
 <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
 <script src="{{ static('js/scripts.js') }}"></script>

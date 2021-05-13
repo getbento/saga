@@ -35,10 +35,59 @@ $(document).ready(function(){
       $('.pull-out__background__hover .pull-out__background__img').eq(index).addClass('active');
     });
 
+    $(this).on('focus', function(){
+      $('.pull-out__background__hover .pull-out__background__img').eq(index).addClass('active');
+    });
+
     $(this).on('mouseout', function(){
       $('.pull-out__background__hover .pull-out__background__img').eq(index).removeClass('active');
     });
+
+    $(this).on('blur', function(){
+      $('.pull-out__background__hover .pull-out__background__img').eq(index).removeClass('active');
+    });
   });
+  /* END MENU SCRIPTS */
+
+  /* Generic */
+  if ( $('.smooth-scroller').length ) {
+    $('.smooth-scroller').on('click', function(e){
+      e.preventDefault();
+      let target = $( $(this).attr('href') ).offset().top;
+      let dist = Math.abs($(window).scrollTop() - target);
+
+      $([document.documentElement, document.body]).animate({
+        scrollTop: target
+      }, Math.min(1200, ((dist / 1200) * 1000)));
+    }).on('keypress', handleKeypressADA);
+  }
+  /* END GENERIC SCRIPTS */
+
+  /* Homepage */
+  if ( $('.homepage__floors__list-item__link.has-bg').length ) {
+    $('.homepage__floors__list-item__link.has-bg').each(function(index){
+      $(this).on('mouseover', function(){
+        $('.homepage__floors__hover__img').eq(index).addClass('active');
+        $('.homepage__floors__list').addClass('active');
+      });
+
+      $(this).on('focus', function(){
+        $('.homepage__floors__hover__img').eq(index).addClass('active');
+        $('.homepage__floors__list').addClass('active');
+      });
+
+      $(this).on('mouseout', function(){
+        $('.homepage__floors__hover__img').eq(index).removeClass('active');
+        $('.homepage__floors__list').removeClass('active');
+      });
+
+      $(this).on('blur', function(){
+        $('.homepage__floors__hover__img').eq(index).removeClass('active');
+        $('.homepage__floors__list').removeClass('active');
+      });
+    });
+  }
+  /* END HOMEPAGE SCRIPTS */
 }); // document ready end
 
 /*

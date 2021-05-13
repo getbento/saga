@@ -8,10 +8,16 @@
   @import "globals/mixins";
   @import "globals/main";
 
- /*--------------------------------*\
-    STRUCTURE
- \*--------------------------------*/
-   /* for global site structure */
+/*--------------------------------*\
+  STRUCTURE
+\*--------------------------------*/
+  /* for global site structure */
   @import "structure/navigation";
   @import "structure/footer";
   @import "structure/page";
+
+/*--------------------------------*\
+   TEMPLATES
+\*--------------------------------*/
+  /* for page template and archive structure */
+  @import "templates/front-page";

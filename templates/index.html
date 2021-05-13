@@ -1,17 +1,172 @@
 {% extends "base.html" %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
-<div class="container">
-<h2 class="center">Hello, CMYK!</h2>
-    <div class="row">
-      <div class="one-half column">
-       <h4>{{ account.restaurant_name }}</h4>
+<article class="homepage">
+  <div class="homepage-container">
+    <div class="homepage-container__left homepage__maincontent">
+      <!-- START LANDING SECTION -->
+      <section class="homepage__landing">
+        <h1>
+          {% include "svg/logo.html" %}
+          <span class="screen-reader-text">
+            {{ account.site.title }}
+          </span>
+        </h1>
+        <div class="homepage__landing__desktop">
+          <p class="homepage__landing__scrollnotice">
+            Scroll up to explore
+          </p>
+        </div>
+        <div class="homepage__landing__mobile">
+          {% if theme.options.site.tagline %}
+          <p class="homepage__landing__tagline">
+            {{ theme.options.site.tagline }}
+          </p>
+          {% endif %}
+          {% if navs.side|length != 0 %}
+          <ul class="site-header__nav__list">
+            {% for item in navs.side %}
+              <li class="site-header__nav__list-item">
+                <a class="site-header__nav__list-item__link" href="{{ item.url }}">{{ item.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </section>
+      <!-- END LANDING SECTION -->
+
+      {% if pages.by_slug.index.fields.welcome.title or pages.by_slug.index.fields.welcome.content %}
+      <!-- START WELCOME SECTION -->
+      <section class="homepage__welcome">
+        <div class="homepage-box">
+          {% if pages.by_slug.index.fields.welcome.title %}
+          <h2 class="homepage-box__title">
+            {{ pages.by_slug.index.fields.welcome.title }}
+          </h2>
+          {% endif %}
+          {% if pages.by_slug.index.fields.welcome.content %}
+          <div class="homepage-box__content">
+            {{ pages.by_slug.index.fields.welcome.content }}
+          </div>
+          {% endif %}
+        </div>
+      </section>
+      <!-- END WELCOME SECTION -->
+      {% endif %}
+
+      {% if pages.by_slug.index.fields.content.sections|length > 0 %}
+      <!-- START HOMEPAGE SECTIONS -->
+      <div class="homepage__sections">
+        {% for section in pages.by_slug.index.fields.content.sections %}
+        <section class="homepage-box">
+          {% if section.title %}
+          <h2 class="homepage-box__title">
+            {{ section.title }}
+          </h2>
+          {% endif %}
+          {% if section.content %}
+          <div class="homepage-box__content">
+            {{ section.content }}
+          </div>
+          {% endif %}
+        </section>
+        {% endfor %}
       </div>
+      <!-- END HOMEPAGE SECTIONS -->
+      {% endif %}
+
     </div>
-    {% for menu in boxes.menus.all %}
-      <div class="row">
-        <a href="{{ menu.url }}">{{ menu.name }}</a>
+    <div class="homepage-container__right pine-responsive homepage__elevatorscrollable">
+      <img class="pine-responsive__top" src="{{ static('img/70pine-top.png') }}" alt="">
+      <div class="pine-responsive__crosshatch" style="background-image:url('{{ static('img/70pinecrosshatch.png') }}')"></div>
+      <img class="pine-responsive__bottom" src="{{ static('img/70pine-bottomv2.png') }}" alt="">
+      <div class="homepage__elevatorsticky">
+        <div class="homepage__elevatorsticky__elevator">
+          <a href="#saga" class="homepage__elevatorsticky__elevator-link smooth-scroller">
+            {% include "svg/elevator.html" %}
+            <span class="homepage__elevatorsticky__elevator-link__text">
+              Jump to SAGA
+            </span>
+          </a>
+        </div>
       </div>
-    {% endfor %}
+      {% if pages.by_slug.index.fields.crownshy.link.url %}
+      <a href="{{ pages.by_slug.index.fields.crownshy.link.url }}" class="homepage__crownshy"
+      {% if pages.by_slug.index.fields.crownshy.link.target %}
+      target="_blank"
+      {% endif %}
+      >
+        <figure class="homepage__crownshy__figure">
+          <img class="homepage__crownshy__logo" src="{{ pages.by_slug.index.fields.crownshy.logo.url }}" alt="{{ pages.by_slug.index.fields.crownshy.logo.alt_text }}">
+          {% if pages.by_slug.index.fields.crownshy.content %}
+          <figcaption class="homepage__crownshy__figure__text">
+            {{ pages.by_slug.index.fields.crownshy.content }}
+          </figcaption>
+          {% endif %}
+        </figure>
+      </a>
+      {% endif %}
+    </div>
   </div>
+  <section class="homepage__floors homepage-container" id="saga">
+    <div class="homepage-container__left">
+      <div class="homepage__floors__desktop">
+        {% include "svg/logo.html" %}
+        {% if theme.options.site.tagline %}
+        <p class="homepage__floors__tagline">
+          {{ theme.options.site.tagline }}
+        </p>
+        {% endif %}
+      </div>
+      {% if pages.by_slug.index.fields.floors.links|length > 0 %}
+      <ul class="homepage__floors__list">
+        {% for floor in pages.by_slug.index.fields.floors.links %}
+        <li class="homepage__floors__list-item
+        {% if floor.empty %}
+        empty
+        {% endif %}
+        ">
+          {% if not floor.empty %}
+          <a href="{{ floor.url }}" class="homepage__floors__list-item__link
+          {% if floor.img %}
+          has-bg
+          {% endif %}
+          ">
+            {% if floor.img %}
+            <span class="homepage__floors__list-item__link__bg" style="background-image: url({{ floor.img.url }})"></span>
+            {% endif %}
+            <span class="homepage__floors__list-item__link__inner">
+              {{ floor.title }}
+              {% if floor.floor %}
+              <span class="homepage__floors__list-item__link__floor">
+                {{ floor.floor }}
+              </span>
+              {% endif %}
+              {% include "svg/chevron.html" %}
+            </span>
+          </a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if pages.by_slug.index.fields.floors.links|length > 0 %}
+      <div class="homepage__floors__hover" aria-role="presentation" aria-hidden="true">
+        {% for floor in pages.by_slug.index.fields.floors.links %}
+        {% if floor.img %}
+        <div class="homepage__floors__hover__img" style="background-image:url({{ floor.img.url }})" >
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="homepage-container__right topfloor">
+      <img src="{{ static('img/70pine-floors.png') }}" alt="">
+    </div>
+  </section>
+</article>
 {% endblock %}

@@ -102,3 +102,13 @@
     }
   }
 }
+
+.desktop-footer-hide {
+  @include for-size(no-mobile) {
+    clip:rect(1px, 1px, 1px, 1px);
+    position: fixed !important;
+    width: 100vw;
+    left: 0;
+    top: 0;
+  }
+}
