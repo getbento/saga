@@ -27,6 +27,11 @@ $pine-width : 45rem;
       }
 
     }
+  } @include for-size(mobile) {
+    > .homepage-container:first-child {
+      position: relative;
+      z-index: 3;
+    }
   }
   &-container {
     display: flex;
@@ -36,6 +41,8 @@ $pine-width : 45rem;
       @include flex(1,0,0);
       @include for-size(no-mobile) {
         padding: 0 $homepage-left-padding;
+      } @include for-size(mobile) {
+        padding: 0 $content_mobile_margins;
       }
       @include for-size(mobile) {
         @include flex(0,0,100%);
@@ -53,7 +60,7 @@ $pine-width : 45rem;
         justify-content: flex-end;
       }
       @include for-size(mobile) {
-        display: none;
+        display: none !important;
       }
     }
   }
@@ -126,6 +133,9 @@ $pine-width : 45rem;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @include for-size(mobile) {
+      min-height: calc(100vh - 6.4rem);
+    }
     svg {
       max-width: 35.1rem;
       width: auto;
@@ -133,6 +143,8 @@ $pine-width : 45rem;
       color: $gray;
       @include for-size(mobile) {
         max-width: 32.1rem;
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -144,6 +156,20 @@ $pine-width : 45rem;
       @include for-size(no-mobile) {
         display: none;
       }
+
+      .site-header__nav__list {
+        flex-direction: column;
+        align-items:  stretch;
+        margin-top: 9rem;
+        .site-header__nav__list-item {
+          margin-right: 0;
+          margin-bottom: 1.6rem;
+          text-align: center;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
 
     &__scrollnotice {
@@ -151,6 +177,17 @@ $pine-width : 45rem;
       @include nav-font-style;
       color: $offgray;
       opacity: 0.6;
+    }
+
+    &__tagline {
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.175rem;
+      line-height: 1.8rem;
+      color: $peach;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 1.8rem;
     }
   }
 
@@ -168,6 +205,9 @@ $pine-width : 45rem;
     }
 
   } &__sections {
+    @include for-size(mobile) {
+      display: none !important;
+    }
     @include for-size(no-mobile) {
       flex-direction: column-reverse;
       .homepage-box {
@@ -242,6 +282,12 @@ $pine-width : 45rem;
 
     &__list {
       @include flex(0,0,auto);
+      @include for-size(mobile) {
+        position: relative;
+        left: -#{$content_mobile_margins};
+        width: calc(100% + #{$content_mobile_margins * 2});
+        margin-bottom: 4.8rem;
+      }
       @include for-size(no-mobile) {
         position: relative;
         left: -3.2rem;
@@ -250,12 +296,21 @@ $pine-width : 45rem;
       &-item {
         height: 5.6rem;
         position: relative;
+        @include for-size(mobile) {
+          overflow: hidden;
+        }
         &.empty {
           height: 6.4rem;
-        } &:last-child {
-          height: 4.9rem;
-        } &:nth-last-child(3) {
-          height: 6rem;
+          @include for-size(mobile) {
+            display: none;
+          }
+        }
+        @include for-size(no-mobile) {
+          &:last-child {
+           height: 4.9rem;
+         } &:nth-last-child(3) {
+           height: 6rem;
+         }
         }
         &__link {
           width: 100%;
@@ -389,7 +444,8 @@ $pine-width : 45rem;
     max-width: $homepage-box-max-width;
     margin: 20vh 0;
     @include for-size(mobile) {
-      margin: 4.8rem 0;
+      margin: 0;
+      margin-bottom: 4.8rem;
     }
     &__title {
       @include h4-style;
