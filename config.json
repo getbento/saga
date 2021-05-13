@@ -3,6 +3,16 @@
         "name": "Broth (Boilerplate theme)",
         "author": "The BentoBox Team",
         "fields": {
+            "site": {
+              "title": "Site Options",
+              "type": "section",
+              "items": {
+                "tagline": {
+                  "title": "Tagline",
+                  "type": "text"
+                }
+              }
+            },
             "footer": {
         			"title": "Footer",
         			"type": "section",
@@ -100,6 +110,10 @@
               "title": "Site Popup",
               "type": "section",
               "items": {
+                "active": {
+                  "title": "Popup is active?",
+                  "type": "boolean"
+                },
                 "title": {
                   "title": "Title",
                   "type": "text"
@@ -116,8 +130,8 @@
         							"title": "URL",
         							"type": "text"
         						},
-        						"copy": {
-        							"title": "Copy",
+        						"title": {
+        							"title": "Title",
         							"type": "text"
         						},
         						"target": {

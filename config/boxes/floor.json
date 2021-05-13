@@ -27,8 +27,8 @@
 									"title": "URL",
 									"type": "text"
 								},
-								"copy": {
-									"title": "Copy",
+								"title": {
+									"title": "Title",
 									"type": "text"
 								},
 								"target": {

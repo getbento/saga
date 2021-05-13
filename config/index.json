@@ -35,6 +35,38 @@
         }
   		}
     },
+    "floors": {
+      "title": "Floors",
+      "type": "section",
+      "items": {
+        "links": {
+          "title": "Links",
+          "type": "repeater",
+          "items": {
+            "empty": {
+              "title": "Empty?",
+              "type": "boolean"
+            },
+            "url": {
+							"title": "URL",
+							"type": "text"
+						},
+            "title": {
+							"title": "Title",
+							"type": "text"
+						},
+            "floor": {
+              "title": "Floor",
+              "type": "text"
+            },
+            "img": {
+              "title": "Hover Image",
+              "type": "image"
+            }
+          }
+        }
+      }
+    },
 		"crownshy": {
 			"title": "Crown Shy",
 			"type": "section",
@@ -47,8 +79,8 @@
 							"title": "URL",
 							"type": "text"
 						},
-						"copy": {
-							"title": "Copy",
+						"title": {
+							"title": "Title",
 							"type": "text"
 						},
 						"target": {
@@ -57,7 +89,7 @@
 						}
 					}
 				},
-				"copy": {
+				"content": {
 					"title": "Hover Copy",
 					"type": "text"
 				},
@@ -71,6 +103,7 @@
   "wireframe": [
     "section-welcome",
     "section-content",
+    "section-floors",
     "section-crownshy"
   ]
 }
