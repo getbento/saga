@@ -1,0 +1,12 @@
+<header class="page-header
+{% if current.fields.header.header_img %}
+has-background
+{% endif %}
+">
+  <h1 class="page-header__title">
+    {{ current.name }}
+  </h1>
+  <div class="page-header__content">
+    {% block headercontent %}{% endblock %}
+  </div>
+</header>

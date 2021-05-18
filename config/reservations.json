@@ -1,6 +1,17 @@
 {
 	"name": "Reservations Page",
 	"fields": {
+		"header": {
+      "title": "Header",
+      "type": "section",
+      "items": {
+        "introduction": "wysiwyg",
+        "header_img": {
+          "title": "Header Image",
+          "type": "image"
+        }
+      }
+    },
 		"reservations": {
 			"title": "Reservations",
 			"type": "section",
@@ -41,6 +52,7 @@
 		}
 	},
 	"wireframe": [
+		"section-header",
 		"section-reservations"
 	]
 }

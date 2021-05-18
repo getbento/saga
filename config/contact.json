@@ -1,6 +1,17 @@
 {
 	"name": "Contact Page",
 	"fields": {
+		"header": {
+      "title": "Header",
+      "type": "section",
+      "items": {
+        "introduction": "wysiwyg",
+        "header_img": {
+          "title": "Header Image",
+          "type": "image"
+        }
+      }
+    },
 		"content": {
 			"title": "Content",
 			"type": "section",
@@ -10,6 +21,7 @@
 		}
 	},
 	"wireframe": [
+		"section-header",
     "section-content"
   ]
 }

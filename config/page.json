@@ -1,0 +1,129 @@
+{
+	"name": "Page",
+	"fields": {
+    "header": {
+      "title": "Header",
+      "type": "section",
+      "items": {
+        "introduction": "wysiwyg",
+        "header_img": {
+          "title": "Header Image",
+          "type": "image"
+        }
+      }
+    },
+		"flexible_content": {
+      "title": "Flexible Content",
+			"type": "section",
+      "items": {
+        "sections": {
+          "title": "Sections",
+          "type": "repeater",
+          "items": {
+            "sectiontype": {
+              "title": "Type",
+              "type": "dropdown",
+              "options": [
+                "WYSIWYG",
+                "Gallery",
+                "Separator",
+                "Full Width Image",
+                "Newsletter Capture"
+              ]
+            },
+						"wysiwyg": {
+							"title": "WYSIWYG"
+							"type": "section",
+							"display_logic": {
+								"sectiontype": {
+									"operator": "==",
+									"value": "WYSIWYG"
+								}
+							},
+							"items": {
+								"content": "wysiwyg"
+							}
+						},
+						"gallery": {
+							"title": "Gallery"
+							"type": "section",
+							"display_logic": {
+								"sectiontype": {
+									"operator": "==",
+									"value": "Gallery"
+								}
+							},
+							"items": {
+								"title": {
+									"title": "Title",
+									"type": "text"
+								},
+								"images": {
+									"title": "Images",
+									"type": "repeater",
+									"items": {
+										"img": {
+											"title": "Image",
+											"type": "image"
+										}
+									}
+								}
+							}
+						},
+						"separator": {
+							"title": "Separator"
+							"type": "section",
+							"display_logic": {
+								"sectiontype": {
+									"operator": "==",
+									"value": "Separator"
+								}
+							},
+							"items": {
+								"color": "color"
+							}
+						},
+						"fw_img": {
+							"title": "Full Width Image"
+							"type": "section",
+							"display_logic": {
+								"sectiontype": {
+									"operator": "==",
+									"value": "Full Width Image"
+								}
+							},
+							"items": {
+								"image": "image",
+								"caption": "text"
+							}
+						},
+						"newsletter": {
+							"title": "Newsletter Capture"
+							"type": "section",
+							"display_logic": {
+								"sectiontype": {
+									"operator": "==",
+									"value": "Newsletter Capture"
+								}
+							},
+							"items": {
+								"cta": {
+									"title": "CTA",
+									"type": "text"
+								},
+								"img": {
+									"title": "Image",
+									"type": "image"
+								}
+							}
+						}
+          }
+        }
+      }
+		}
+	},
+	"wireframe": [
+    "section-header",
+		"section-flexible_content"
+	]
+}
