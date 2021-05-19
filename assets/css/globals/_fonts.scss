@@ -43,7 +43,12 @@ $futura: futura-pt, sans-serif;
     }
 
     @mixin hero-mobile-style {
-
+      font-family: $futura;
+      font-weight: 500;
+      font-size: 4.5rem;
+      line-height: 5rem;
+      letter-spacing: 0.176rem;
+      text-transform: none;
     }
    /* H1 */
    @mixin h1-style( $responsive : true, $mobile : false ) {
@@ -121,7 +126,12 @@ $futura: futura-pt, sans-serif;
      }
 
      @mixin h3-mobile-style {
-
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 2.5rem;
+       line-height: 2.9rem;
+       letter-spacing: 0.179rem;
+       text-transform: none;
      }
    /* H4 */
    @mixin h4-style( $responsive : true, $mobile : false ) {
@@ -330,7 +340,7 @@ $futura: futura-pt, sans-serif;
          }
        }
      } @else {
-       @include footer-nav-font-mobile-style;
+       @include caption-font-mobile-style;
      }
    }
      /* Nav Font Components */
@@ -345,6 +355,37 @@ $futura: futura-pt, sans-serif;
 
      @mixin caption-font-mobile-style {
 
+     }
+   /* Link Font */
+   @mixin link-font-style( $responsive : true, $mobile : false ) {
+     @if $mobile == false {
+       @include link-font-desktop-style;
+       @if $responsive == true {
+         @media screen and (max-width: $mobile_max) {
+           @include link-font-mobile-style;
+         }
+       }
+     } @else {
+       @include link-font-mobile-style;
+     }
+   }
+     /* Nav Font Components */
+     @mixin link-font-desktop-style {
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 2rem;
+       line-height: 2.6rem;
+       letter-spacing: 0.25rem;
+       text-transform: none;
+     }
+
+     @mixin link-font-mobile-style {
+       font-family: $futura;
+       font-weight: 300;
+       font-size: 1.8rem;
+       line-height: 1.8rem;
+       letter-spacing: 0.225rem;
+       text-transform: none;
      }
 
  @mixin drop-cap {

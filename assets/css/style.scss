@@ -21,6 +21,8 @@
 \*--------------------------------*/
   /* for page template and archive structure */
   @import "templates/front-page";
+  @import "templates/team-landing";
+  @import "templates/dining";
 
 /*--------------------------------*\
    BLOCKS
@@ -31,3 +33,5 @@
   @import "blocks/fullimage";
   @import "blocks/gallery";
   @import "blocks/newsletter";
+  @import "blocks/2col";
+  @import "blocks/button";

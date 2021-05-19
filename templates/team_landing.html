@@ -1,13 +1,74 @@
 {% extends 'base.html' %}
 
-{% import 'template-parts/blocks/newsletter.html' as newsletter %}
+{% import 'template-parts/blocks/2col.html' as twocol %}
+{% import 'template-parts/blocks/separator.html' as separator %}
+
+{% block title %}{{ current.name }}{% endblock %}
 
 {% block content %}
 <article>
+  <main>
   {% include "template-parts/pageheader-default.html" %}
 
-  <div class="content-margins content-container">
-    {{ newsletter.render('Lorem ipsum') }}
+  <div class="container-margins">
+    <ul class="team-list">
+      {% for member in boxes.staff.all %}
+        {% if member.bio or member.image %}
+          <li class="team-list__item full">
+            {% if member.image %}
+            <figure class="team-list__item__figure">
+              <img src="{{ member.image.url }}" alt="{{ member.image.alt_text }}">
+            </figure>
+            {% endif %}
+            <div class="team-list__item__info">
+              <p class="team-list__item__name">
+                {{ member.name }}
+              </p>
+              <p class="team-list__item__title">
+                {{ member.title }}
+              </p>
+              {% if member.bio %}
+                <div class="team-list__item__bio">
+                  {{ member.bio }}
+                </div>
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% for member in boxes.staff.all %}
+        {% if not member.bio and not member.image %}
+          <li class="team-list__item">
+            <p class="team-list__item__name">
+              {{ member.name }} {{ counter }}
+            </p>
+            <p class="team-list__item__title">
+              {{ member.title }}
+            </p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </div>
+  <div class="content-margins">
+    {{ separator.render(none) }}
+    {% if current.fields.description.image or current.fields.description.content or current.fields.decription.link.url %}
+      {% call twocol.render(current.fields.description.image) %}
+        {{ current.fields.description.content }}
+        {% if current.fields.description.link.url %}
+        <div class="bblock-button">
+          <a href="{{ current.fields.description.link.url }}" class="bblock-button__link"
+          {% if current.fields.description.link.target %}
+          target="_blank"
+          {% endif %}
+          >
+            {{ current.fields.description.link.title }}
+          </a>
+        </div>
+        {% endif %}
+      {% endcall %}
+    {% endif %}
+  </div>
+  </main>
 </article>
 {% endblock %}

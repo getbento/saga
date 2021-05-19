@@ -44,6 +44,7 @@
         font-weight: 500;
         color: $peach;
         letter-spacing: 0.173rem;
+        margin: 3.6rem 0;
       }
       @include for-size(no-mobile) {
         position: absolute;
@@ -56,6 +57,24 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+      }
+    } &__button {
+      width: 6.2rem;
+      height: 2.4rem;
+      cursor: pointer;
+      background-image: url('../img/arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: transform 300ms $bezier;
+      &:hover, &:focus {
+        transform: translateX(3px);
+      }
+      &.slick-prev {
+        transform: scaleX(-1);
+        &:hover, &:focus {
+          transform: scaleX(-1) translateX(3px);
+        }
       }
     }
 

@@ -1,5 +1,7 @@
 {% extends "template-parts/pageheader.html" %}
 
 {% block headercontent %}
-<p>Hello, world!</p>
+  {% if current.fields.header.introduction %}
+  {{ current.fields.header.introduction }}
+  {% endif %}
 {% endblock %}

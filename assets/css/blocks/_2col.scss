@@ -1,0 +1,61 @@
+.bblock-2col {
+  @include full-width-in-content;
+  margin: 5.6rem 0;
+  &__container {
+    @include container-margins;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include for-size(mobile) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 100%;
+    }
+  } &__left {
+    @include flex(1,0,0);
+    padding-right: 5.6rem;
+    @include for-size(mobile) {
+      @include flex(1,1,auto);
+      padding-right: 0;
+    }
+    > h1, > h2, > h3, > h4, > h5, > h6 {
+      font-weight: 400;
+      &:first-child {
+        margin-bottom: 3.6rem;
+      }
+    } > p {
+      margin: 2rem 0;
+    } .bblock-button {
+      margin-top: 3.6rem;
+    }
+  } &__right {
+    @include flex(1,0,0);
+    @include for-size(mobile) {
+      @include flex(1,1,auto);
+      padding-right: 1.2rem;
+      padding-bottom: 1.2rem;
+      margin-bottom: 7.2rem;
+    }
+    padding-right: 2.4rem;
+    padding-bottom: 2.4rem;
+    position: relative;
+    &__img {
+      display: block;
+      width: 100%;
+      height: auto;
+    } &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: calc(100% - 2.4rem);
+      width: calc(100% - 2.4rem);
+      border: 1px solid rgba($peach, 0.4);
+      @include for-size(mobile) {
+        width: calc(100% - 1.2rem);
+        height: calc(100% - 1.2rem);
+      }
+    }
+  }
+}

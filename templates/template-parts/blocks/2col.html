@@ -1,0 +1,12 @@
+{% macro render(image) -%}
+  <div class="bblock-2col">
+    <div class="bblock-2col__container">
+      <div class="bblock-2col__left">
+        {{ caller() }}
+      </div>
+      <figure class="bblock-2col__right">
+        <img class="bblock-2col__right__img" src="{{ image.url }}" alt="{{ image.alt_text }}">
+      </figure>
+    </div>
+  </div>
+{%- endmacro %}

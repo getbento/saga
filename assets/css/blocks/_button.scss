@@ -1,0 +1,22 @@
+.bblock-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @include for-size(mobile) {
+    justify-content: center;
+  }
+  &__link {
+    @include button-style;
+    text-decoration: none;
+  }
+}
+
+.bblock-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__link {
+    @include link-style;
+    text-decoration: none;
+  }
+}

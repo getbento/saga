@@ -80,7 +80,7 @@
   {% endif %}
 
 </head>
-<body>
+<body class="page-{{ current.slug }} template-{{ current.template.split('.')|join('-') }}">
   <div id="page" class="container">
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
     <header class="site-header">
@@ -126,9 +126,6 @@
             </a>
           </p>
           <div class="pull-out__left">
-            <h2 class="pull-out__title">
-              Menu
-            </h2>
             <nav class="pull-out__nav">
               {% if navs.main|length != 0 %}
               <ul class="pull-out__nav__list">

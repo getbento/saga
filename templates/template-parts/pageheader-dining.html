@@ -1,0 +1,37 @@
+{% extends "template-parts/pageheader.html" %}
+
+{% block headercontent %}
+<div class="dining-landing">
+  <div class="dining-landing__left">
+    {% if current.fields.header.introduction %}
+      {{ current.fields.header.introduction }}
+    {% endif %}
+    <ul class="dining-landing__left__list">
+      {% for floor in boxes.floor.all %}
+      <li class="dining-landing__left__list-item">
+        <a class="dining-landing__left__list-item__link
+        {% if loop.index0 == 0 %}
+        active
+        {% endif %}
+        " href="{{ floor.url }}">
+          {{ floor.name }} {% include "svg/chevron.html" %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="dining-landing__right">
+    <h2 class="dining-landing__right__title">Floorplan</h2>
+    <ul class="dining-landing__right__list">
+      {% for floor in boxes.floor.all %}
+      <li class="dining-landing__right__list-item" id="floorplan-{{ loop.index0 }}">
+        <figure class="dining-landing__right__list-item__figure">
+          <img class="dining-landing__right__list-item__img" src="{{ floor.fields.floorplan.image.url }}" alt="{{ floor.fields.floorplan.image.alt_text }}">
+        </figure>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

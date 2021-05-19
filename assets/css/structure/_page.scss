@@ -30,20 +30,22 @@
     > * {
       @include h3-style;
       font-weight: 300;
+      @include for-size(mobile) {
+        font-weight: 300;
+      }
     }
   }
 
   &__figure {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    @include for-size(no-mobile) {
-      left: -7.2rem;
-      width: 100vw;
-    }
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    transition: opacity 600ms $bezier;
+    pointer-events: none;
+    overflow: hidden;
     &::before {
       content: '';
       position: absolute;
@@ -53,6 +55,25 @@
       height: 100%;
       background: linear-gradient(179.13deg, rgba(5,0,0,0.4) 0%, rgba(2,0,0,0) 100%);
       z-index: 2;
+    } &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../img/scroll.svg');
+      background-size: 5.3rem auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 5.3rem;
+      height: 7.8rem;
+      right: 5.6rem;
+      bottom: 2rem;
+      z-index: 3;
+    }
+
+    &.scrolled {
+      opacity: 0;
+      .page-header__img {
+        transform: scale(1.03);
+      }
     }
   } &__img {
     position: absolute;
@@ -62,10 +83,15 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    transition: transform 600ms $bezier;
   }
 
   &.has-background {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25vh;
     .page-header {
       &__title {
         color: $offwhite;

@@ -6,6 +6,8 @@
 {% import 'template-parts/blocks/fullimage.html' as fullimage %}
 {% import 'template-parts/blocks/newsletter.html' as newsletter %}
 
+{% block title %}{{ current.name }}{% endblock %}
+
 {% block content %}
 <article>
   {% include "template-parts/pageheader-default.html" %}
