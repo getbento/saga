@@ -1,0 +1,26 @@
+.bblock-fwimg {
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  @include for-size(no-mobile) {
+    left: calc(50% - 50vw - 3.6rem);
+    padding-left: 7.2rem;
+  } &__container {
+    @include for-size(no-mobile) {
+      display: block;
+      position: relative;
+      left: -7.2rem;
+      width: calc(100% + 7.2rem);
+    }
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+  } &__caption {
+    @include container-margins;
+    @include caption-font-style;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba($offwhite, 0.14);
+    margin-top: 2.4rem;
+  }
+}

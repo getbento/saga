@@ -1,0 +1,12 @@
+.bblock-separator {
+  @include container-margins;
+  border: 0;
+  height: 1px;
+  background-color: $offwhite;
+  transform: scaleY(0.4);
+  margin-top: 11rem;
+  margin-bottom: 5.6rem;
+  &__container {
+    @include full-width-in-content;
+  }
+}

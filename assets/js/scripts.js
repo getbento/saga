@@ -50,7 +50,7 @@ $(document).ready(function(){
   /* END MENU SCRIPTS */
 
   /* Generic */
-  if ( $('.smooth-scroller').length ) {
+  if ( $('.smooth-scroller').length ) { // internal links, smooth scrolling
     $('.smooth-scroller').on('click', function(e){
       e.preventDefault();
       let target = $( $(this).attr('href') ).offset().top;
@@ -60,6 +60,27 @@ $(document).ready(function(){
         scrollTop: target
       }, Math.min(1200, ((dist / 1200) * 1000)));
     }).on('keypress', handleKeypressADA);
+  }
+
+  if ( $('.fr-dib').length ) {
+    $('.fr-dib').each(function(){
+      $(this).wrap('<figure></figure');
+      $(this).parent().attr('class', $(this).attr('class'));
+
+      const img = $(this).is('img') ? $(this) : $(this).find('img');
+      const caption = $(this).find('.fr-inner').length ? $(this).find('.fr-inner') : false;
+
+      const figure = $(this).parent();
+      figure.html('');
+
+      figure.append(img);
+
+      if ( caption ) {
+        const figcaption = document.createElement('figcaption');
+        $(figcaption).append(caption);
+        figure.append(figcaption);
+      }
+    });
   }
   /* END GENERIC SCRIPTS */
 
@@ -88,6 +109,21 @@ $(document).ready(function(){
     });
   }
   /* END HOMEPAGE SCRIPTS */
+
+  /* Gallery */
+  if ( $('.bblock-gallery').length ) {
+    $('.bblock-gallery').each(function(){
+      const list = $(this).find('.bblock-gallery__list');
+      const controls = $(this).find('.bblock-gallery__list__controls');
+      list.slick({
+        arrows: true,
+        appendArrows: controls,
+        swipe: false,
+        speed: 900
+      });
+    });
+  }
+  /* END GALLERY SCRIPTS */
 }); // document ready end
 
 /*

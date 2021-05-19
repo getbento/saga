@@ -21,3 +21,13 @@
 \*--------------------------------*/
   /* for page template and archive structure */
   @import "templates/front-page";
+
+/*--------------------------------*\
+   BLOCKS
+\*--------------------------------*/
+  /* for gutenberg blocks, native or custom */
+  @import "blocks/wysiwyg";
+  @import "blocks/separator";
+  @import "blocks/fullimage";
+  @import "blocks/gallery";
+  @import "blocks/newsletter";

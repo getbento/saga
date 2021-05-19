@@ -1,0 +1,46 @@
+{
+	"name": "Team Page",
+  "fields": {
+    "header": {
+      "title": "Header",
+      "type": "section",
+      "items": {
+        "introduction": "wysiwyg",
+        "header_img": {
+          "title": "Header Image",
+          "type": "image"
+        }
+      }
+    },
+		"description": {
+      "title": "Description",
+      "type": "section",
+      "items": {
+        "content": "wysiwyg",
+        "link": {
+          "title": "Link",
+          "type": "section",
+          "items": {
+            "url": {
+              "title": "URL",
+              "type": "text"
+            },
+            "title": {
+              "title": "Title",
+              "type": "text"
+            },
+            "target": {
+              "title": "Open link in new tab?",
+              "type": "boolean"
+            }
+          }
+        },
+        "image": "image"
+      }
+    }
+  },
+  "wireframe": [
+    "section-header",
+		"section-description"
+	]
+}

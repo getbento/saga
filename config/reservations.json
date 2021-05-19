@@ -49,10 +49,25 @@
 		      }
 		    }
 			}
+		},
+		"newsletter": {
+			"title": "Newsletter Capture"
+			"type": "section",
+			"items": {
+				"cta": {
+					"title": "CTA",
+					"type": "text"
+				},
+				"img": {
+					"title": "Image",
+					"type": "image"
+				}
+			}
 		}
 	},
 	"wireframe": [
 		"section-header",
-		"section-reservations"
+		"section-reservations",
+		"section-newsletter"
 	]
 }

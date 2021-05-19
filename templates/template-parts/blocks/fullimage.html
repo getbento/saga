@@ -1,0 +1,12 @@
+{% macro render(section) -%}
+  <figure class="bblock-fwimg">
+    <span class="bblock-fwimg__container">
+      <img class="bblock-fwimg__img" src="{{ section.image.url }}" alt="{{ section.image.alt_text }}">
+    </span>
+    {% if section.caption %}
+    <figcaption class="bblock-fwimg__caption">
+      {{ section.caption }}
+    </figcaption>
+    {% endif %}
+  </figure>
+{%- endmacro %}

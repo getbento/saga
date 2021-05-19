@@ -1,9 +1,29 @@
 {% extends 'base.html' %}
 
+{% import 'template-parts/blocks/wysiwyg.html' as wysiwyg %}
+{% import 'template-parts/blocks/gallery.html' as gallery %}
+{% import 'template-parts/blocks/separator.html' as separator %}
+{% import 'template-parts/blocks/fullimage.html' as fullimage %}
+{% import 'template-parts/blocks/newsletter.html' as newsletter %}
+
 {% block content %}
+<article>
+  {% include "template-parts/pageheader-default.html" %}
 
-{% include "template-parts/pageheader-default.html" %}
-
-Hello, world!
-
+  <div class="content-margins content-container">
+    {% for section in current.fields.flexible_content.sections %}
+      {% if section.sectiontype == 'WYSIWYG' %}
+        {{ wysiwyg.render(section.wysiwyg.content) }}
+      {% elif section.sectiontype == 'Gallery' %}
+        {{ gallery.render(section.gallery) }}
+      {% elif section.sectiontype == 'Separator' %}
+        {{ separator.render(section.separator.color) }}
+      {% elif section.sectiontype == 'Full Width Image' %}
+        {{ fullimage.render(section.fw_img) }}
+      {% elif section.sectiontype == 'Newsletter Capture' %}
+        {{ newsletter.render(section.newsletter.cta) }}
+      {% endif %}
+    {% endfor %}
+  </div>
+</article>
 {% endblock %}

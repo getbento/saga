@@ -14,8 +14,14 @@
     transform-origin: right top;
     transform: translateX(-100%) rotate(-90deg);
     pointer-events: auto;
+    @include for-size(mobile) {
+      pointer-events: none;
+    }
     > * {
       z-index: 1;
+      @include for-size(mobile) {
+        pointer-events: auto;
+      }
     }
     &::before {
       content: '';

@@ -1,0 +1,29 @@
+{% macro render(section) -%}
+  <div class="bblock-gallery">
+    <div class="bblock-gallery__container">
+      {% if section.title %}
+      <h2 class="bblock-gallery__title">
+        {{ section.title }}
+      </h2>
+      {% endif %}
+      {% if section.images|length > 0 %}
+      <div class="bblock-gallery__list__container">
+        <ul class="bblock-gallery__list">
+          {% for image in section.images %}
+          <li class="bblock-gallery__list-item">
+            <figure class="bblock-gallery__list-item__figure">
+              <img class="bblock-gallery__list-item__img" src="{{ image.img.url }}" alt="{{ img.img.alt_text }}">
+            </figure>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="bblock-gallery__list__controls">
+          <div class="bblock-gallery__list__controls__page">
+            <span class="bblock-gallery__list__controls__page-current">1</span> | {{ section.images|length }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+{%- endmacro %}
