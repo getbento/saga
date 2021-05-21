@@ -2,6 +2,16 @@
 	"name": "Floors",
 	"has_categories": true,
 	"fields": {
+		"header": {
+      "title": "Header",
+      "type": "section",
+      "items": {
+        "header_img": {
+          "title": "Header Image",
+          "type": "image"
+        }
+      }
+    },
 		"floor_num": {
 			"type": "text",
 			"title": "Floor Number"
@@ -63,7 +73,7 @@
 									"title": "URL",
 									"type": "text"
 								},
-								"copy": {
+								"title": {
 									"title": "Copy",
 									"type": "text"
 								},
@@ -86,7 +96,7 @@
 					"title": "Images",
 					"type": "repeater",
 					"items": {
-						"image": "image"
+						"img": "image"
 					}
 				}
 			}
