@@ -45,6 +45,9 @@
         color: $peach;
         letter-spacing: 0.173rem;
         margin: 3.6rem 0;
+        @include for-size(mobile) {
+          margin: 1.2rem 2rem;
+        }
       }
       @include for-size(no-mobile) {
         position: absolute;
@@ -56,6 +59,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
+      } @include for-size(mobile) {
+        display: flex;
+        align-items: center;
         justify-content: center;
       }
     } &__button {

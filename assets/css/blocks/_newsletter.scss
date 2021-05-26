@@ -44,8 +44,11 @@
         background: transparent;
         margin: 0 auto;
         margin-top: 3.2rem;
+        border-color: rgba($offwhite, 0.4);
+        color: $offwhite;
         &:hover, &:focus {
           background-color: $white;
+          color: $terblack;
         }
       }
     }

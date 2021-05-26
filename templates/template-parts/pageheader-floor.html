@@ -1,0 +1,65 @@
+<div class="page-header
+{% if current.fields.header.header_img %}
+has-background
+{% endif %}
+">
+  <div class="page-header__margins">
+    {% if current.fields.header.header_img %}
+    <figure class="page-header__figure">
+      <img class="page-header__img" src="{{ current.fields.header.header_img.url }}" alt="{{ current.fields.header.alt_text }}">
+    </figure>
+    {% endif %}
+    <div class="floor-header">
+      <div class="floor-header__upper">
+        <header>
+          <h1 class="page-header__title">
+            {% if current.fields.floor_num or current.fields.subtitle %}
+              <b>{{ current.fields.floor_num }}</b> {{ current.fields.subtitle }}
+            {% else %}
+              {{ current.name }}
+            {% endif %}
+          </h1>
+        </header>
+        <div class="floor-header__content">
+          {{ current.fields.overview.content }}
+          {% if current.fields.overview.links|length > 0 %}
+          <div class="bblock-link">
+          {% for link in current.fields.overview.links %}
+          <a href="{{ link.link.url }}" class="bblock-link__link"
+          {% if link.link.target %}
+          target="_blank"
+          {% endif %}
+          >
+            {{ link.link.title }}
+          </a>
+          {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="floor-header__plan">
+        <figure class="floor-header__plan__figure">
+          <img src="{{ current.fields.floorplan.annotated.url }}" alt="{{ current.fields.floorplan.annotated.url }}">
+          <figcaption>Explore the space</figcaption>
+        </figure>
+      </div>
+      <div class="floor-header__lower">
+        {{ current.fields.description.content }}
+        {% if current.fields.description.links|length > 0 %}
+        <div class="bblock-button">
+        {% for link in current.fields.description.links %}
+        <a href="{{ link.link.url }}" class="bblock-button__link"
+        {% if link.link.target %}
+        target="_blank"
+        {% endif %}
+        >
+          {{ link.link.title }}
+        </a>
+        {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>

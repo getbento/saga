@@ -80,7 +80,8 @@
   {% endif %}
 
 </head>
-<body class="page-{{ current.slug }} template-{{ current.template.split('.')|join('-') }}">
+{% set template = current.template.split('.')|join('-') %}
+<body class="page-{{ current.slug }} template-{{ template.split('/')|join('-') }}">
   <div id="page" class="container">
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
     <header class="site-header">
@@ -90,7 +91,11 @@
           <ul class="site-header__nav__list">
             {% for item in navs.side %}
               <li class="site-header__nav__list-item">
-                <a class="site-header__nav__list-item__link" href="{{ item.url }}">{{ item.name }}</a>
+                <a class="site-header__nav__list-item__link
+                {% if item.slug == current.slug %}
+                active
+                {% endif %}
+                " href="{{ item.url }}">{{ item.name }}</a>
               </li>
             {% endfor %}
           </ul>

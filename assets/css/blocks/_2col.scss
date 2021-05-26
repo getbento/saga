@@ -19,16 +19,7 @@
       @include flex(1,1,auto);
       padding-right: 0;
     }
-    > h1, > h2, > h3, > h4, > h5, > h6 {
-      font-weight: 400;
-      &:first-child {
-        margin-bottom: 3.6rem;
-      }
-    } > p {
-      margin: 2rem 0;
-    } .bblock-button {
-      margin-top: 3.6rem;
-    }
+    @include half-content-style;
   } &__right {
     @include flex(1,0,0);
     @include for-size(mobile) {

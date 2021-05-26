@@ -102,3 +102,7 @@
     }
   }
 }
+
+.saga-bordered-title-box {
+  @include bordered-title-box;
+}

@@ -1,0 +1,54 @@
+.saga-form {
+  &__2col {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include for-size(mobile) {
+      display: block;
+    }
+    > * {
+      @include flex(0,0,calc(50% - 1.6rem));
+      @include for-size(mobile) {
+        width: 100%;
+      }
+    }
+  }
+  &__input {
+    display: block;
+    margin-bottom: 3.6rem;
+    &__label {
+      font-size: 2.2rem;
+      line-height: 2.6rem;
+      letter-spacing: 0.275rem;
+      font-weight: 300;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    &__textinput, &__dateinput, &__timeinput, &__textarea {
+      @include input-style;
+      width: 100%;
+    } &__dateinput, &__timeinput {
+      padding-right: 2.4rem;
+      background-image: url('../img/dropdown.svg');
+      background-size: 7px auto;
+      background-repeat: no-repeat;
+      background-position: calc(100% - 1.6rem) center;
+    } &__textarea {
+      min-height: 17.2rem;
+      max-width: 100%;
+    }
+  }
+
+  .bblock-button {
+    justify-content: center;
+    &__link {
+      background-color: transparent;
+      border-color: rgba($offwhite, 0.4);
+      color: $offwhite;
+      &:hover, &:focus {
+        background-color: $offwhite;
+        color: $terblack;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.template-contact-html {
+  .page-header__content {
+    > * {
+      @include p-style;
+    }
+  }
+}

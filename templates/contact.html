@@ -1,7 +1,60 @@
 {% extends 'base.html' %}
 
+{% import 'template-parts/blocks/newsletter.html' as newsletter %}
+{% import 'forms.html' as forms with context %}
+
+{% block title %}{{ current.name }}{% endblock %}
+
 {% block content %}
+<article>
+  {% include "template-parts/pageheader-default.html" %}
 
-Hello, world!
+  <div class="content-margins content-container">
+    <div class="saga-bordered-title-box__title saga-form__title">
+      <h2 class="saga-bordered-title-box__title__text saga-form__title__text">
+        Contact Inquiry
+      </h2>
+    </div>
+    <div class="saga-form saga-bordered-title-box">
+    {% call forms.email_form("info") %}
+      <div class="saga-form__2col">
+        <label class="saga-form__input">
+          <span class="saga-form__input__label">First Name*</span>
+          <input class="saga-form__input__textinput" type="text" name="fname" placeholder="Your First Name" required>
+        </label>
+        <label class="saga-form__input">
+          <span class="saga-form__input__label">Last Name*</span>
+          <input class="saga-form__input__textinput" type="text" name="lname" placeholder="Your Last Name" required>
+        </label>
+      </div>
 
+      <div class="saga-form__2col">
+        <label class="saga-form__input">
+          <span class="saga-form__input__label">Email*</span>
+          <input class="saga-form__input__textinput" type="email" name="email" placeholder="Your Email" required>
+        </label>
+        <label class="saga-form__input">
+          <span class="saga-form__input__label">Phone Number*</span>
+          <input class="saga-form__input__textinput" type="text" name="phone" placeholder="Your Phone Number" required>
+        </label>
+      </div>
+      <label class="saga-form__input">
+        <span class="saga-form__input__label">Subject</span>
+        <input class="saga-form__input__textinput" type="text" name="purpose" placeholder="Business, personal, etc." required>
+      </label>
+      <label class="saga-form__input">
+        <span class="saga-form__input__label">Additional Information</span>
+        <textarea class="saga-form__input__textarea" name="info" placeholder="Anything else you'd like us  to know."></textarea>
+      </label>
+      <div class="bblock-button">
+        <button class="bblock-button__link" type="submit">
+          Submit
+        </button>
+      </div>
+    {% endcall %}
+    </div>
+
+    {{ newsletter.render('Lorem ipsum') }}
+  </div>
+</article>
 {% endblock %}

@@ -23,6 +23,8 @@
   @import "templates/front-page";
   @import "templates/team-landing";
   @import "templates/dining";
+  @import "templates/reservations";
+  @import "templates/contact";
 
 /*--------------------------------*\
    BLOCKS
@@ -35,3 +37,11 @@
   @import "blocks/newsletter";
   @import "blocks/2col";
   @import "blocks/button";
+  @import "blocks/form";
+
+/*--------------------------------*\
+   SINGLE
+\*--------------------------------*/
+  /* for single post / taxonomy structure */
+  @import "single/event";
+  @import "single/floor";

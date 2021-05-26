@@ -101,11 +101,14 @@
 
 @mixin input-style($color: inherit) {
   @include reset-appearance;
-
+  @include p-style;
+  padding: 1.2rem 1.8rem;
+  border: 1px solid rgba($offwhite, 0.5);
+  transition: border 300ms $bezier;
   @include placeholder {
 
   } &:focus {
-    // TODO: ADD TEXT INPUT FOCUS STYLES
+    border-color: rgba($offwhite, 1);
   }
 }
 
@@ -132,6 +135,11 @@
     transform: scaleY(0);
     transition: transform 300ms $bezier;
   }
+  &.active {
+    background-color: $peach;
+    color: #262626;
+  }
+
   &:focus, &:hover {
     background-color: $offwhite;
     color: $terblack;
@@ -238,6 +246,76 @@
     }
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+@mixin half-content-style {
+  > h1, > h2, > h3, > h4, > h5, > h6 {
+    font-weight: 400;
+    &:first-child {
+      margin-bottom: 3.6rem;
+    }
+  } > p {
+    margin: 2rem 0;
+  } .bblock-button {
+    margin-top: 3.6rem;
+  }
+}
+
+@mixin bordered-title-box {
+  display: block;
+  padding: 4.8rem;
+  border: 1px solid rgba($peach, 0.4);
+  border-top: 0;
+  @include for-size(mobile) {
+    padding: 3.2rem 2rem;
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(0deg, rgba($peach, 0.4) 0%, rgba($peach, 0.4) 100%), linear-gradient(0deg, rgba($peach, 0.4) 0%, rgba($peach, 0.4) 100%);
+    background-size: 1px 50%, 1px 50%;
+    background-position: left bottom, right bottom;
+    background-repeat: no-repeat;
+    @include for-size(mobile) {
+      background-size: 1px calc(100% - 1.6rem), 1px calc(100% - 1.6rem);
+    }
+    &::before, &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: rgba($peach, 0.4);
+      @include for-size(mobile) {
+        align-self: flex-start;
+        margin-top: 1.6rem;
+      }
+    } &::before {
+      @include flex(0,0,3.6rem);
+      margin-right: 0.8rem;
+      @include for-size(mobile) {
+        @include flex(0,0,1.2rem);
+      }
+    } &::after {
+      @include flex(1,0,0);
+      margin-left: 0.8rem;
+    }
+    &__text {
+      color: $peach;
+      @include h4-style;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      max-width: calc(100% - 2.4rem);
+      > span {
+        color: $white;
+        text-transform: uppercase;
+        margin-left: 1.2rem;
+        @include for-size(mobile) {
+          display: block;
+          margin-left: 0;
+        }
+      }
     }
   }
 }
