@@ -54,6 +54,7 @@
           margin-right: 0;
         }
         &__link {
+          background-color: rgba($white, 0.15);
           @include button-style;
           text-decoration: none;
         }

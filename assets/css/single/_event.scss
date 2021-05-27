@@ -1,0 +1,33 @@
+.event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @include for-size(mobile) {
+    flex-direction: column;
+  }
+  &__item {
+    @include flex(1,1,auto);
+    margin-right: 4rem;
+    &.bblock-button {
+      align-self: center;
+      @include for-size(mobile) {
+        align-self: flex-start;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include for-size(mobile) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+
+    &__title {
+      @include h4-style;
+      color: $peach;
+      margin-bottom: 0.8rem;
+    }
+  }
+}

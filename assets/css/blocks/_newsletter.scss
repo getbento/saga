@@ -38,6 +38,10 @@
         letter-spacing: 0.25rem;
         line-height: 2.6rem;
         padding-bottom: 0.8rem;
+        transition: 300ms $bezier;
+        &:focus {
+          border-bottom-color: $offwhite;
+        }
       }
       &__submit {
         @include button-style;

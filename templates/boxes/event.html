@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% import 'template-parts/blocks/newsletter.html' as newsletter %}
+{% import 'template-parts/blocks/separator.html' as separator %}
 {% import 'template-parts/blocks/2col.html' as twocol %}
 
 {% block title %}{{ current.name }}{% endblock %}
@@ -9,7 +11,20 @@
   {% include "template-parts/pageheader-event.html" %}
 
   <div class="content-margins content-container">
-    <p>Hello, world!</p>
+    {{ separator.render(none) }}
+    {% if current.description or current.images.length > 0 %}
+      {% call twocol.render(current.images[0]) %}
+        {{ current.description }}
+        {% if current.external_url %}
+        <div class="bblock-button">
+          <a href="{{ current.external_url }}" class="bblock-button__link" target="_blank">
+            RSVP
+          </a>
+        </div>
+        {% endif %}
+      {% endcall %}
+    {% endif %}
+    {{ newsletter.render('Lorem ipsum') }}
   </div>
 </article>
 {% endblock %}

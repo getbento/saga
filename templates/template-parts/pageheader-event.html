@@ -1,5 +1,29 @@
 {% extends "template-parts/pageheader.html" %}
 
 {% block headercontent %}
-  <p>Hello, world!</p>
+  <div class="event-header">
+    {% if current.has_start_date %}
+    <div class="event-header__item">
+      <h2 class="event-header__item__title">Date {% if current.has_start_time %}& Time{% endif %}</h2>
+      <p>{{ current.starts|date('%B %-d, %Y') }}{% if current.has_start_time %}• {{ current.starts_time }}{% endif %}</p>
+    </div>
+    {% endif %}
+    {% if current.fields.location %}
+    <div class="event-header__item">
+      <h2 class="event-header__item__title">Location</h2>
+      <p>{{ current.fields.location }}</p>
+    </div>
+    {% endif %}
+    {% if current.fields.ticket %}
+    <div class="event-header__item">
+      <h2 class="event-header__item__title">Ticket</h2>
+      <p>{{ current.fields.ticket }}</p>
+    </div>
+    {% endif %}
+    {% if current.external_url %}
+    <div class="event-header__item bblock-button">
+      <a class="bblock-button__link" href="{{ current.external_url }}">RSVP</a>
+    </div>
+    {% endif %}
+  </div>
 {% endblock %}
