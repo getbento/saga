@@ -2,13 +2,52 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  margin: 9rem 0;
+  @include container-margins;
+  margin-top: 9rem;
+  margin-bottom: 9rem;
+  @include for-size(mobile) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
   &__left {
-    @include flex(1,0,0);
+    @include flex(4,0,0);
+    position: relative;
+    @include for-size(mobile) {
+      @include flex(1,1,auto);
+      width: calc(100% - 4rem);
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0;
+        padding-bottom: 104%;
+      }
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 1.6rem;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include for-size(mobile) {
+        top: 0;
+      }
+    }
   } &__right {
-    @include flex(2,0,0);
+    @include flex(5,0,0);
     position: relative;
     padding: 3.2rem 4.8rem;
+    @include for-size(mobile) {
+      @include flex(1,1,auto);
+      padding: 3rem;
+      margin-bottom: -1.6rem;
+      width: 100%;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -18,11 +57,18 @@
       height: 100%;
       border: 1px solid rgba($peach, 0.4);
       pointer-events: none;
+      @include for-size(mobile) {
+        width: 100%;
+      }
     }
   }
 
   &__cta {
     @include h4-style;
+  }
+
+  &__container {
+    @include full-width-in-content;
   }
 }
 

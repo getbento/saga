@@ -23,7 +23,7 @@
       {% elif section.sectiontype == 'Full Width Image' %}
         {{ fullimage.render(section.fw_img) }}
       {% elif section.sectiontype == 'Newsletter Capture' %}
-        {{ newsletter.render(section.newsletter.cta) }}
+        {{ newsletter.render(section.newsletter.cta, section.newsletter.img) }}
       {% endif %}
     {% endfor %}
   </div>

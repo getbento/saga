@@ -24,7 +24,9 @@
         {% endif %}
       {% endcall %}
     {% endif %}
-    {{ newsletter.render('Lorem ipsum') }}
+    {% if theme.options.site.newsletter.cta and theme.options.site.newsletter.img %}
+    {{ newsletter.render(theme.options.site.newsletter.cta, theme.options.site.newsletter.img) }}
+    {% endif %}
   </div>
 </article>
 {% endblock %}

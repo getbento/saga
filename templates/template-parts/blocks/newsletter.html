@@ -1,13 +1,15 @@
 {% macro render(cta, image) -%}
-  <div class="newsletter-block">
-    <figure class="newsletter-block__left">
-
-    </figure>
-    <div class="newsletter-block__right">
-      <p class="newsletter-block__cta">
-        {{ cta }}
-      </p>
-      {% include "template-parts/newsletter-full.html" %}
+  <div class="newsletter-block__container">
+    <div class="newsletter-block">
+      <figure class="newsletter-block__left">
+        <img src="{{ image.url }}" alt="{{ image.alt_text }}">
+      </figure>
+      <div class="newsletter-block__right">
+        <p class="newsletter-block__cta">
+          {{ cta }}
+        </p>
+        {% include "template-parts/newsletter-full.html" %}
+      </div>
     </div>
   </div>
 {%- endmacro %}
