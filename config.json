@@ -154,6 +154,11 @@
         						}
         					}
         				},
+                "propid": {
+                  "title": "Popup ID",
+                  "type": "text",
+                  "helper": "A unique JSON property safe string used to identify this popup. Change this when launching a new sitewide popup to ensure that users who have dismissed previous popups will see your new content.",
+                }
               }
             },
             "custom_styles": {

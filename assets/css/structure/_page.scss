@@ -106,3 +106,84 @@
 .saga-bordered-title-box {
   @include bordered-title-box;
 }
+
+.modal-area {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(#0D0D0D, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: opacity 500ms $bezier;
+  pointer-events: none;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &__container {
+    position: relative;
+    width: calc(100% - 4.8rem);
+    max-width: 48.8rem;
+    padding-top: 5.6rem;
+    padding-bottom: 3.2rem;
+    background-color: #0D0D0D;
+    border: 1px solid rgba($peach, 0.4);
+    &__inner {
+      width: calc(100% - 2.4rem);
+      max-width: 31.6rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__dismiss {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    color: $peach;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms $bezier;
+    svg {
+      stroke: currentColor;
+    }
+    &:focus, &:hover {
+      background-color: $peach;
+      color: $terblack;
+    }
+  }
+
+  &__accent {
+    position: absolute;
+    left: calc(50% - 2.8rem);
+    top: -2.8rem;
+    width: 5.6rem;
+    svg {
+      width: 5.6rem;
+      height: auto;
+    }
+  }
+
+  &__title {
+    @include h4-style;
+    color: $peach;
+    margin-bottom: 1.6rem;
+    text-align: center;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  .bblock-button {
+    margin-top: 2.8rem;
+    justify-content: center;
+  }
+}

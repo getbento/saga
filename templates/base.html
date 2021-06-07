@@ -215,6 +215,43 @@
       {% endblock %}
     </div>
 
+    {% if theme.options.popup.active %}
+    <aside class="modal-area" data-delay="5000" data-propid="{{ theme.options.popup.propid }}">
+      <div class="modal-area__container">
+        <button class="modal-area__dismiss">
+          {% include "svg/close.html" %}
+          <span class="screen-reader-text">Dismiss</span>
+        </button>
+        <div class="modal-area__accent">
+          {% include "svg/mark.html" %}
+        </div>
+        <div class="modal-area__container__inner">
+          {% if theme.options.popup.title %}
+          <h2 class="modal-area__title">
+            {{ theme.options.popup.title }}
+          </h2>
+          {% endif %}
+          {% if theme.options.popup.content %}
+          <div class="modal-area__content">
+            {{ theme.options.popup.content }}
+          </div>
+          {% endif %}
+          {% if theme.options.popup.link.url %}
+          <div class="bblock-button">
+            <a class="bblock-button__link" href="{{ theme.options.popup.link.url }}"
+            {% if theme.options.popup.link.target %}
+            target="_blank"
+            {% endif %}
+            >
+              {{ theme.options.popup.link.title }}
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </aside>
+    {% endif %}
+
     {% if current.slug == 'index' %}
     <div class="desktop-footer-hide">
     {% endif %}
