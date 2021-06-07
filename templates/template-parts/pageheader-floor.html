@@ -22,18 +22,20 @@ has-background
         </header>
         <div class="floor-header__content">
           {{ current.fields.overview.content }}
-          {% if current.fields.overview.links|length > 0 %}
-          <div class="bblock-link">
-          {% for link in current.fields.overview.links %}
-          <a href="{{ link.link.url }}" class="bblock-link__link"
-          {% if link.link.target %}
-          target="_blank"
-          {% endif %}
-          >
-            {{ link.link.title }}
-          </a>
-          {% endfor %}
-          </div>
+          {% if current.fields.overview.links %}
+            {% if current.fields.overview.links|length > 0 %}
+            <div class="bblock-link">
+            {% for link in current.fields.overview.links %}
+            <a href="{{ link.link.url }}" class="bblock-link__link"
+            {% if link.link.target %}
+            target="_blank"
+            {% endif %}
+            >
+              {{ link.link.title }}
+            </a>
+            {% endfor %}
+            </div>
+            {% endif %}
           {% endif %}
         </div>
       </div>
@@ -44,19 +46,23 @@ has-background
         </figure>
       </div>
       <div class="floor-header__lower">
-        {{ current.fields.description.content }}
-        {% if current.fields.description.links|length > 0 %}
-        <div class="bblock-button">
-        {% for link in current.fields.description.links %}
-        <a href="{{ link.link.url }}" class="bblock-button__link"
-        {% if link.link.target %}
-        target="_blank"
+        {% if current.fields.description.content %}
+          {{ current.fields.description.content }}
         {% endif %}
-        >
-          {{ link.link.title }}
-        </a>
-        {% endfor %}
-        </div>
+        {% if current.fields.description.links %}
+          {% if current.fields.description.links|length > 0 %}
+          <div class="bblock-button">
+          {% for link in current.fields.description.links %}
+          <a href="{{ link.link.url }}" class="bblock-button__link"
+          {% if link.link.target %}
+          target="_blank"
+          {% endif %}
+          >
+            {{ link.link.title }}
+          </a>
+          {% endfor %}
+          </div>
+          {% endif %}
         {% endif %}
       </div>
     </div>
