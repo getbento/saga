@@ -38,5 +38,7 @@
     @include for-size(no-mobile) {
       line-height: 8.4rem;
     }
+  } .page-header__margins {
+    max-width: 820px;
   }
 }
