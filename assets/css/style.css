@@ -422,7 +422,7 @@ svg {
 }
 
 .site-header__nav__list-item__link:focus, .site-header__nav__list-item__link:hover {
-  background-color: #FFFBEA;
+  background-color: #FFB990;
   color: #110F10;
 }
 
@@ -3036,7 +3036,7 @@ body.template-floors_landing-html .page-header__title {
 }
 
 .saga-res__section .bblock-button__link:hover, .saga-res__section .bblock-button__link:focus {
-  background-color: #FFFBEA;
+  background-color: #FFB990;
   color: #110F10;
 }
 
@@ -3665,7 +3665,7 @@ figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-
 }
 
 .newsletter-form:not(.condensed) .newsletter-form__submit:focus, .newsletter-form:not(.condensed) .newsletter-form__submit:hover {
-  background-color: #FFFBEA;
+  background-color: #FFB990;
   color: #110F10;
 }
 
@@ -3674,7 +3674,7 @@ figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-
 }
 
 .newsletter-form:not(.condensed) .newsletter-form__submit:hover, .newsletter-form:not(.condensed) .newsletter-form__submit:focus {
-  background-color: #FFFFFF;
+  background-color: #FFB990;
   color: #110F10;
 }
 
@@ -3846,7 +3846,7 @@ figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-
 }
 
 .bblock-button__link:focus, .bblock-button__link:hover {
-  background-color: #FFFBEA;
+  background-color: #FFB990;
   color: #110F10;
 }
 
@@ -4018,7 +4018,7 @@ figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-
 }
 
 .saga-form .bblock-button__link:hover, .saga-form .bblock-button__link:focus {
-  background-color: #FFFBEA;
+  background-color: #FFB990;
   color: #110F10;
 }
 
