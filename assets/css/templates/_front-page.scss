@@ -98,6 +98,8 @@ $pine-width : 45rem;
           display: block;
           * {
             transition: fill 300ms $bezier;
+          } #elevatordoor {
+            fill: #1A1A19;
           }
         } &__text {
           display: block;

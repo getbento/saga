@@ -1990,6 +1990,10 @@ svg {
   transition: fill 300ms cubic-bezier(0.64, 0.04, 0.35, 1);
 }
 
+.homepage__elevatorsticky__elevator-link svg #elevatordoor {
+  fill: #1A1A19;
+}
+
 .homepage__elevatorsticky__elevator-link__text {
   display: block;
   color: #FFB990;
