@@ -571,3 +571,42 @@ $pine-width : 45rem;
     }
   }
 }
+
+.homepage-building-scroll {
+  position: relative;
+  margin-left: 3rem;
+  @include for-size(mobile) {
+    display: none;
+  }
+  img {
+    height: 4.6rem;
+    width: auto;
+  }
+  &__sizer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__floor {
+    @include for-size(mobile) {
+      display: none;
+    }
+    @include h6-style;
+    letter-spacing: 0.126rem;
+    color: $peach;
+    opacity: 0.35;
+    text-transform: uppercase;
+    margin-left: 1.6rem;
+    position: relative;
+    top: -0.3rem;
+  }
+}

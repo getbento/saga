@@ -430,6 +430,18 @@ svg {
   transform: scale(1);
 }
 
+.site-header__push {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
+@media (max-width: 767px) {
+  .site-header__push {
+    display: none;
+  }
+}
+
 .pull-out {
   position: fixed;
   left: 7.2rem;
@@ -2552,6 +2564,59 @@ svg {
 .pine-responsive__top img, .pine-responsive__bottom img {
   display: block;
   margin: 0;
+}
+
+.homepage-building-scroll {
+  position: relative;
+  margin-left: 3rem;
+}
+
+@media (max-width: 767px) {
+  .homepage-building-scroll {
+    display: none;
+  }
+}
+
+.homepage-building-scroll img {
+  height: 4.6rem;
+  width: auto;
+}
+
+.homepage-building-scroll__sizer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.homepage-building-scroll__sizer img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.homepage-building-scroll__floor {
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.126rem;
+  color: #FFB990;
+  opacity: 0.35;
+  text-transform: uppercase;
+  margin-left: 1.6rem;
+  position: relative;
+  top: -0.3rem;
+}
+
+@media (max-width: 767px) {
+  .homepage-building-scroll__floor {
+    display: none;
+  }
 }
 
 .team-list {

@@ -9,6 +9,7 @@ const mobileBreakpoint = 767;
   /* Window */
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
+    var windowScrollHeight = document.querySelector('body').scrollHeight;
   /* Breakpoints */
     var isMobile = ( windowWidth <= mobileBreakpoint );
   /* Mobile Navigation */
@@ -19,6 +20,12 @@ const handleKeypressADA = function() {
   if (keycode == '13') return;
   $(this).trigger('click');
 };
+
+$(window).on('load', function() {
+  windowWidth = $(window).width();
+  windowHeight = $(window).height();
+  windowScrollHeight = document.querySelector('body').scrollHeight;
+});
 
 $(document).ready(function(){
   /* Menu */
@@ -138,6 +145,14 @@ $(document).ready(function(){
       });
     });
   }
+
+  if ( $('.homepage-building-scroll').length ) {
+    $(window).on('scroll', function(){
+      const scrollPer = ( (windowScrollHeight - windowHeight) - $(window).scrollTop()) / (windowScrollHeight - windowHeight);
+      $('.homepage-building-scroll__sizer').css('width', (scrollPer * 100) + '%' );
+      $('.homepage-building-scroll__floor-num').text( pad('' + (Math.floor(scrollPer * 65) + 1), 2) );
+    });
+  }
   /* END HOMEPAGE SCRIPTS */
 
   /* Dining Landing */
@@ -189,6 +204,7 @@ $(document).ready(function(){
 $(window).resize(function(){
   windowWidth = $(window).width();
   windowHeight = $(window).height();
+  windowScrollHeight = document.querySelector('body').scrollHeight;
   isMobile = ( windowWidth <= mobileBreakpoint );
 
 }); // end window resize functions
@@ -225,3 +241,9 @@ $(window).resize(function(){
      }
    }
  }
+
+ function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+  }

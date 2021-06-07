@@ -86,6 +86,20 @@
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="site-header__container">
+        {% if current.slug == 'index' %}
+        <div class="homepage-building-scroll" aria-role="presentation">
+          <img src="{{ static('img/HP_Building_grey.png') }}" alt="">
+          <span class="homepage-building-scroll__sizer">
+            <img src="{{ static('img/HP_Building_peach.png') }}" alt="">
+          </span>
+        </div>
+        <div class="homepage-building-scroll__floor" aria-role="presentation">
+          Flr <span class="homepage-building-scroll__floor-num">01</span>
+        </div>
+        <div class="site-header__push">
+
+        </div>
+        {% endif %}
         <nav class="site-header__nav">
           {% if navs.side|length != 0 %}
           <ul class="site-header__nav__list">
