@@ -4077,6 +4077,21 @@ figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-
   margin-bottom: 0.8rem;
 }
 
+.template-boxes-event-html .page-header__title {
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-size: 6.4rem;
+  line-height: 4.4rem;
+  letter-spacing: 0.25remx;
+  text-transform: none;
+}
+
+@media (min-width: 768px) {
+  .template-boxes-event-html .page-header__title {
+    line-height: 8.4rem;
+  }
+}
+
 body.template-boxes-floor-html .page-header {
   padding: 0;
 }

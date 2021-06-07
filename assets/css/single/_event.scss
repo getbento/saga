@@ -31,3 +31,12 @@
     }
   }
 }
+
+.template-boxes-event-html {
+  .page-header__title {
+    @include h1-style;
+    @include for-size(no-mobile) {
+      line-height: 8.4rem;
+    }
+  }
+}
