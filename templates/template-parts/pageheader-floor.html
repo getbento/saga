@@ -39,12 +39,14 @@ has-background
           {% endif %}
         </div>
       </div>
+      {% if current.fields.floorplan.annotated %}
       <div class="floor-header__plan">
         <figure class="floor-header__plan__figure">
           <img src="{{ current.fields.floorplan.annotated.url }}" alt="{{ current.fields.floorplan.annotated.url }}">
           <figcaption>Explore the space</figcaption>
         </figure>
       </div>
+      {% endif %}
       <div class="floor-header__lower">
         {% if current.fields.description.content %}
           {{ current.fields.description.content }}

@@ -9,10 +9,12 @@
 <article>
   {% include "template-parts/pageheader-floor.html" %}
 
-  {%if current.fields.gallery.images|length > 0 %}
-  <div class="content-margins content-container">
-    {{ gallery.render( current.fields.gallery ) }}
-  </div>
+  {% if current.fields.gallery.images %}
+    {%if current.fields.gallery.images|length > 0 %}
+    <div class="content-margins content-container">
+      {{ gallery.render( current.fields.gallery ) }}
+    </div>
+    {% endif %}
   {% endif %}
 </article>
 <div class="content-margins content-container">
