@@ -42,7 +42,7 @@ $pine-width : 45rem;
       @include for-size(no-mobile) {
         padding: 0 $homepage-left-padding;
       } @include for-size(mobile) {
-        padding: 0 $content_mobile_margins;
+        padding: 0 2rem;
       }
       @include for-size(mobile) {
         @include flex(0,0,100%);
