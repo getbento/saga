@@ -15,9 +15,13 @@ $pine-width : 45rem;
         top: 0;
         height: 100%;
         width: 100vw;
-        background-image: linear-gradient(180deg, #0B0B0A 0%, #292828 56.72%, #0B0B0A 100%);
-        background-size: 100% 100%;
+        background-color: $black;
+        background-image: linear-gradient(180deg, rgba(#292828, 0%) 0%, #292828 56.72%, rgba(#292828, 0%) 100%), linear-gradient(0deg, rgba($black, 0%) 0%, rgba($black, 100%) 100%), linear-gradient(180deg, rgba($black, 0%) 0%, rgba($black, 100%) 100%);
+        background-size: 100% 100%, 100% 80%, 100% 80%;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: left top, left top, left bottom;
         z-index: 1;
+        transform: translateZ(0);
       } > * {
         position: relative;
         z-index: 2;
@@ -42,7 +46,7 @@ $pine-width : 45rem;
       @include for-size(no-mobile) {
         padding: 0 $homepage-left-padding;
       } @include for-size(mobile) {
-        padding: 0 $content_mobile_margins;
+        padding: 0 2rem;
       }
       @include for-size(mobile) {
         @include flex(0,0,100%);
@@ -147,6 +151,7 @@ $pine-width : 45rem;
         max-width: 32.1rem;
         width: 100%;
         height: auto;
+        color: $white;
       }
     }
 
@@ -334,6 +339,7 @@ $pine-width : 45rem;
             width: 100%;
             height: 100%;
             background-attachment: fixed;
+            background-size: cover;
             z-index: 1;
             transform: scale(1.03);
             transition: transform 600ms $bezier, opacity 600ms $bezier;
@@ -424,7 +430,7 @@ $pine-width : 45rem;
         top: 0;
         width: 100%;
         height: 100%;
-        background-attachment: fixed;
+        background-size: cover;
         transform: scale(1.03);
         opacity: 0;
         transition: transform 600ms $bezier, opacity 300ms $bezier;

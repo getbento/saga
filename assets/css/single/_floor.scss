@@ -28,6 +28,10 @@ body.template-boxes-floor-html {
     align-items: stretch;
     justify-content: center;
     flex-direction: column;
+    @include for-size(mobile) {
+      min-height: unset;
+      padding-top: 10.2rem;
+    }
   } &__lower {
     @include for-size(no-mobile) {
       padding: 12.5vh 0;

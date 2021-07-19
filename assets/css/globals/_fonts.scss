@@ -74,7 +74,12 @@ $futura: futura-pt, sans-serif;
      }
 
      @mixin h1-mobile-style {
-
+       font-family: $futura;
+       font-weight: 500;
+       font-size: 4.5rem;
+       line-height: 5rem;
+       letter-spacing: 0.176rem;
+       text-transform: none;
      }
    /* H2 */
    @mixin h2-style( $responsive : true, $mobile : false ) {
