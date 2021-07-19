@@ -1938,6 +1938,9 @@ svg {
   left: calc(50% - 2.8rem);
   top: -2.8rem;
   width: 5.6rem;
+  color: #FFB990;
+  border-radius: 50%;
+  background-color: #0D0D0D;
 }
 
 .modal-area__accent svg {
