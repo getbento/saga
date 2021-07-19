@@ -2745,6 +2745,20 @@ svg {
   font-weight: 500;
 }
 
+@media (max-width: 767px) {
+  .team-list__item__name {
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    text-transform: none;
+    letter-spacing: 0.275rem;
+  }
+}
+
 .team-list__item__bio {
   margin-top: 2rem;
 }
@@ -2908,6 +2922,12 @@ svg {
   text-transform: uppercase;
   text-transform: none;
   letter-spacing: 0.275rem;
+}
+
+@media (max-width: 767px) {
+  .team-list__item.full .team-list__item__title {
+    font-size: 1.8rem;
+  }
 }
 
 .team-list__item.full:nth-child(2n-1) {

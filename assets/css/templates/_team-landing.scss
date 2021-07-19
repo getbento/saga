@@ -15,6 +15,12 @@
       line-height: 2.6rem;
       letter-spacing: 0.275rem;
       font-weight: 500;
+      @include for-size(mobile) {
+        @include h5-style(false);
+        font-size: 1.8rem;
+        text-transform: none;
+        letter-spacing: 0.275rem;
+      }
     } &__bio {
       margin-top: 2rem;
       > * {
@@ -112,6 +118,9 @@
           @include h5-style;
           text-transform: none;
           letter-spacing: 0.275rem;
+          @include for-size(mobile) {
+            font-size: 1.8rem;
+          }
         }
       }
       &:nth-child(2n-1) {
