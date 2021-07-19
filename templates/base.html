@@ -210,9 +210,36 @@
       </div>
     </header>
 
-    <div id="content">
-      {% block content %}
-      {% endblock %}
+    <div class="content-div">
+      {% if current.slug != 'index' %}
+      <div class="mobilestickynav">
+        <div class="mobilestickynav__sticky">
+          <nav class="site-header__nav">
+            {% if navs.side|length != 0 %}
+            <ul class="site-header__nav__list">
+              {% for item in navs.side %}
+                <li class="site-header__nav__list-item">
+                  <a class="site-header__nav__list-item__link
+                  {% if item.slug == current.slug %}
+                  active
+                  {% endif %}
+                  " href="{{ item.url }}">{{ item.name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if navs.side|length == 0 %}
+              <em>Add nav items in the Pages/Nav sections of the admin to get started</em>
+            {% endif %}
+          </nav>
+        </div>
+      </div>
+      {% endif %}
+      <div id="content">
+        {% block content %}
+        {% endblock %}
+      </div>
     </div>
 
     {% if theme.options.popup.active %}
