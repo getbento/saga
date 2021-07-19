@@ -11,6 +11,18 @@
   }
 }
 
+body:not(.template-reservations-html) {
+  .page-header__content {
+    > * {
+      @include h3-style;
+      font-weight: 300;
+      @include for-size(mobile) {
+        font-weight: 300;
+      }
+    }
+  }
+}
+
 .page-header {
   position: relative;
   padding-top: 11.2rem;
@@ -27,13 +39,6 @@
     position: relative;
     z-index: 2;
     margin-top: 4.8rem;
-    > * {
-      @include h3-style;
-      font-weight: 300;
-      @include for-size(mobile) {
-        font-weight: 300;
-      }
-    }
   }
 
   &__figure {
