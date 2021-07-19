@@ -4,6 +4,8 @@ body.template-floors_landing-html {
     background-color: rgba(2,0,0,0.87);
   } .page-header__title {
     @include h1-style;
+  } .page-header {
+    padding-bottom: 2.4rem;
   }
 }
 
@@ -26,6 +28,14 @@ body.template-floors_landing-html {
   }
   &__left {
     margin-right: 3.2rem;
+    @include for-size(mobile) {
+      margin-right: 0;
+      min-height: calc(100vh - 24rem);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+    }
     > * {
       margin: 1.6rem 0;
       &:first-child {

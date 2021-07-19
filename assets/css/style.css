@@ -3021,6 +3021,10 @@ body.template-floors_landing-html .page-header__title {
   }
 }
 
+body.template-floors_landing-html .page-header {
+  padding-bottom: 2.4rem;
+}
+
 .dining-landing {
   display: flex;
   align-items: flex-start;
@@ -3053,6 +3057,17 @@ body.template-floors_landing-html .page-header__title {
 
 .dining-landing__left {
   margin-right: 3.2rem;
+}
+
+@media (max-width: 767px) {
+  .dining-landing__left {
+    margin-right: 0;
+    min-height: calc(100vh - 24rem);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
 }
 
 .dining-landing__left > * {
