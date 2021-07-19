@@ -46,6 +46,7 @@ has-background
         </figure>
       </div>
       {% endif %}
+      {% if current.fields.description.content %}
       <div class="floor-header__lower">
         {% if current.fields.description.content %}
           {{ current.fields.description.content }}
@@ -66,6 +67,7 @@ has-background
           {% endif %}
         {% endif %}
       </div>
+      {% endif %}
     </div>
 
   </div>
