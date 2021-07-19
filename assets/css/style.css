@@ -2852,6 +2852,13 @@ svg {
   justify-content: flex-start;
 }
 
+@media (max-width: 767px) {
+  .team-list__item__expander__container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
 .team-list__item.full {
   flex-grow: 0;
   flex-shrink: 0;

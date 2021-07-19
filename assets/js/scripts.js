@@ -251,31 +251,25 @@ $(window).resize(function(){
  ***************************/
  // team block content hider
  function renderTeamBlockContent(block) {
-   if ( !isMobile ) {
-     $(block).removeClass('has-toggle');
-     const info = $(block).find('.team-list__item__info');
-     const figure = $(block).find('.team-list__item__figure');
+   $(block).removeClass('has-toggle');
+   $(block).find('.team-list__item__expander__container').remove();
+   const info = $(block).find('.team-list__item__info');
+   const figure = $(block).find('.team-list__item__figure');
 
-     if ( info.height() > figure.height() ) {
-       const oldheight = info.height();
-       $(block).addClass('has-toggle');
-       info.css('height', figure.height() + 'px');
-       info.html(info.html() + '<div class="team-list__item__expander__container"><button class="team-list__item__expander">Click to expand</button></div>');
-       info.find('.team-list__item__expander').on('click', function(){
-         info.find('.team-list__item__expander__container').fadeOut(400);
-         info.animate({
-           'height': oldheight
-         }, 600, function(){
-           $(block).removeClass('has-toggle');
-           info.find('.team-list__item__expander__container').remove();
-         });
-       }).on('keypress', handleKeypressADA);
-     }
-   } else {
-     $(block).removeClass('has-toggle');
-     if ( $(block).find('.team-list__item__expander__container').length ) {
-       $(block).find('.team-list__item__expander__container').remove();
-     }
+   if ( info.height() > (isMobile ? 185 : figure.height()) ) {
+     const oldheight = info.height();
+     $(block).addClass('has-toggle');
+     info.css('height', (isMobile ? 185 : figure.height()) + 'px');
+     info.html(info.html() + '<div class="team-list__item__expander__container"><button class="team-list__item__expander">Click to expand</button></div>');
+     info.find('.team-list__item__expander').on('click', function(){
+       info.find('.team-list__item__expander__container').fadeOut(400);
+       info.animate({
+         'height': oldheight
+       }, 600, function(){
+         $(block).removeClass('has-toggle');
+         info.find('.team-list__item__expander__container').remove();
+       });
+     }).on('keypress', handleKeypressADA);
    }
  }
 
