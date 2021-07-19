@@ -22,5 +22,8 @@
     padding: 1.2rem 0;
     border-bottom: 1px solid rgba($offwhite, 0.14);
     margin-top: 2.4rem;
+    @include for-size(mobile) {
+      margin-top: 0;
+    }
   }
 }

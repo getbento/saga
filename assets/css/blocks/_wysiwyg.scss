@@ -24,6 +24,10 @@ figure.fr-dib {
     @include caption-font-style;
     padding: 1.2rem 0;
     border-bottom: 1px solid rgba($offwhite, 0.14);
+    @include for-size(mobile) {
+      padding: 0.8rem 0;
+      display: block;
+    }
     br {
       display: none;
     }
@@ -37,11 +41,21 @@ figure.fr-dib {
       max-width: unset;
       width: calc(100% + #{($container_desktop_max_width - $content_desktop_max_width) / 2});
     }
+
+    @include for-size(mobile) {
+      margin-bottom: 0;
+      img, figcaption {
+        width: 100%;
+      }
+    }
   }
 
   &.fr-fir {
     float: right;
     margin-left: 3.2rem;
+    @include for-size(mobile) {
+      margin-left: 1.6rem;
+    }
   }
 
   &.fr-fil {
@@ -49,6 +63,10 @@ figure.fr-dib {
     margin-right: 3.2rem;
     position: relative;
     left: -#{($container_desktop_max_width - $content_desktop_max_width) / 2};
+    @include for-size(mobile) {
+      left: 0;
+      margin-right: 1.6rem;
+    }
   }
 
   &:not(.fr-fir):not(.fr-fil) {

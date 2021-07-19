@@ -3433,6 +3433,13 @@ figure.fr-dib figcaption {
   border-bottom: 1px solid rgba(255, 251, 234, 0.14);
 }
 
+@media (max-width: 767px) {
+  figure.fr-dib figcaption {
+    padding: 0.8rem 0;
+    display: block;
+  }
+}
+
 figure.fr-dib figcaption br {
   display: none;
 }
@@ -3447,9 +3454,24 @@ figure.fr-dib.fr-fir img, figure.fr-dib.fr-fir figcaption, figure.fr-dib.fr-fil 
   width: calc(100% + 101px);
 }
 
+@media (max-width: 767px) {
+  figure.fr-dib.fr-fir, figure.fr-dib.fr-fil {
+    margin-bottom: 0;
+  }
+  figure.fr-dib.fr-fir img, figure.fr-dib.fr-fir figcaption, figure.fr-dib.fr-fil img, figure.fr-dib.fr-fil figcaption {
+    width: 100%;
+  }
+}
+
 figure.fr-dib.fr-fir {
   float: right;
   margin-left: 3.2rem;
+}
+
+@media (max-width: 767px) {
+  figure.fr-dib.fr-fir {
+    margin-left: 1.6rem;
+  }
 }
 
 figure.fr-dib.fr-fil {
@@ -3457,6 +3479,13 @@ figure.fr-dib.fr-fil {
   margin-right: 3.2rem;
   position: relative;
   left: -101px;
+}
+
+@media (max-width: 767px) {
+  figure.fr-dib.fr-fil {
+    left: 0;
+    margin-right: 1.6rem;
+  }
 }
 
 figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-fil) figcaption {
@@ -3558,6 +3587,12 @@ figure.fr-dib:not(.fr-fir):not(.fr-fil) img, figure.fr-dib:not(.fr-fir):not(.fr-
 @media (max-width: 767px) {
   .bblock-fwimg__caption {
     width: calc(100vw - calc(16px * 2));
+  }
+}
+
+@media (max-width: 767px) {
+  .bblock-fwimg__caption {
+    margin-top: 0;
   }
 }
 
