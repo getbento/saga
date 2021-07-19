@@ -223,6 +223,7 @@
     @include flex(0,0,27.2rem);
     @include for-size(mobile) {
       @include flex(0,0,calc(50% - 3.6rem));
+      min-width: 13.2rem;
     }
   } &__mobilefooter {
     display: none;
