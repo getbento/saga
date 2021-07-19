@@ -46,6 +46,13 @@
     transition: opacity 600ms $bezier;
     pointer-events: none;
     overflow: hidden;
+    @include for-size(mobile) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -92,6 +99,11 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 25vh;
+    @include for-size(mobile) {
+      padding-top: 10.2rem;
+      align-items: flex-start;
+      min-height: unset;
+    }
     .page-header {
       &__title {
         color: $offwhite;
