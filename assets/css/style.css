@@ -4365,6 +4365,13 @@ body.template-boxes-floor-html .page-header__title b {
   flex-direction: column;
 }
 
+@media (max-width: 767px) {
+  .floor-header__upper {
+    min-height: unset;
+    padding-top: 10.2rem;
+  }
+}
+
 @media (min-width: 768px) {
   .floor-header__lower {
     padding: 12.5vh 0;
