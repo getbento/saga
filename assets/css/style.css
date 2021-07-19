@@ -3061,7 +3061,6 @@ body.template-floors_landing-html .page-header__title {
 .dining-landing__right {
   position: relative;
   border: 1px solid rgba(255, 185, 144, 0.4);
-  border-top: 0 solid transparent;
 }
 
 .dining-landing__right__title {
