@@ -291,7 +291,7 @@ input, button {
 
 @media (max-width: 767px) {
   .content-margins {
-    width: calc(100vw - calc(32px * 2));
+    width: calc(100vw - calc(20px * 2));
   }
 }
 
@@ -1618,7 +1618,7 @@ svg {
 
 @media (max-width: 767px) {
   .page-header__margins {
-    width: calc(100vw - calc(32px * 2));
+    width: calc(100vw - calc(20px * 2));
   }
 }
 
@@ -2323,8 +2323,8 @@ svg {
 @media (max-width: 767px) {
   .homepage__floors__list {
     position: relative;
-    left: -32px;
-    width: calc(100% + 64px);
+    left: -20px;
+    width: calc(100% + 40px);
     margin-bottom: 4.8rem;
   }
 }
