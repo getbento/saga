@@ -2828,10 +2828,12 @@ svg {
     border: 1px solid rgba(255, 185, 144, 0.4);
     bottom: 0;
     right: 0;
+    z-index: 1;
   }
   .team-list__item__figure img {
     width: calc(100% - 1.2rem);
     height: calc(100% - 1.2rem);
+    z-index: 2;
   }
 }
 
