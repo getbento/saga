@@ -87,8 +87,9 @@
     top: 7.2rem;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 7.2rem);
+    height: calc((var(--vh, 1vh) * 100) - 7.2rem);
     padding: 0;
+
   }
 
   &__toggle {
