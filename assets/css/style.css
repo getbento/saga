@@ -4581,6 +4581,12 @@ body.template-boxes-floor-html .page-header__title b {
   margin-top: 3.6rem;
 }
 
+@media (max-width: 767px) {
+  .floor-header__plan {
+    padding: 3.2rem 0;
+  }
+}
+
 .floor-header__plan__figure {
   position: relative;
   display: flex;

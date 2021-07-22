@@ -42,6 +42,9 @@ body.template-boxes-floor-html {
       flex-direction: column;
     } @include half-content-style;
   } &__plan {
+    @include for-size(mobile) {
+      padding: 3.2rem 0;
+    }
     &__figure {
       position: relative;
       display: flex;
