@@ -5,6 +5,9 @@
   padding-bottom: 2rem;
   position: relative;
   z-index: 2;
+  @include for-size(mobile) {
+    padding-top: 8.8rem;
+  }
   &__container {
     display: flex;
     align-items: flex-start;
