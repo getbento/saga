@@ -611,6 +611,8 @@
               pointer-events: auto;
               background-color: #313131;
               color: $peach !important;
+              padding-left: 2.3rem;
+              padding-right: 2.3rem;
               &:hover, &:focus {
                 background-color: $peach;
                 color: #262626 !important;
@@ -618,7 +620,7 @@
             }
           }
 
-          @media screen and (max-width: 384px) {
+          @media screen and (max-width: 350px) {
             display: block;
             &-item {
               display: block;

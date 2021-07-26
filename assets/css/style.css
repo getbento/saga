@@ -1407,6 +1407,8 @@ svg {
     pointer-events: auto;
     background-color: #313131;
     color: #FFB990 !important;
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
   }
   .mobilestickynav__sticky .site-header__nav__list-item__link:hover, .mobilestickynav__sticky .site-header__nav__list-item__link:focus {
     background-color: #FFB990;
@@ -1414,7 +1416,7 @@ svg {
   }
 }
 
-@media screen and (max-width: 767px) and (max-width: 384px) {
+@media screen and (max-width: 767px) and (max-width: 350px) {
   .mobilestickynav__sticky .site-header__nav__list {
     display: block;
   }
