@@ -2510,7 +2510,7 @@ body:not(.template-reservations-html) .page-header__content > * {
 .homepage__floors__list-item__link__inner {
   width: 100%;
   padding-left: 3.6rem;
-  max-width: 36rem;
+  max-width: 42rem;
   position: relative;
   z-index: 3;
 }
