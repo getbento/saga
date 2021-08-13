@@ -2251,7 +2251,7 @@ body:not(.template-reservations-html) .page-header__content > * {
   max-width: 35.1rem;
   width: auto;
   height: auto;
-  color: #424242;
+  color: #FFB990;
 }
 
 @media (max-width: 767px) {
@@ -2259,7 +2259,6 @@ body:not(.template-reservations-html) .page-header__content > * {
     max-width: 32.1rem;
     width: 100%;
     height: auto;
-    color: #FFFFFF;
   }
 }
 
@@ -2510,7 +2509,7 @@ body:not(.template-reservations-html) .page-header__content > * {
 .homepage__floors__list-item__link__inner {
   width: 100%;
   padding-left: 3.6rem;
-  max-width: 36rem;
+  max-width: 42rem;
   position: relative;
   z-index: 3;
 }
@@ -3373,6 +3372,16 @@ body.template-floors_landing-html .page-header {
 .saga-res__section .bblock-button__link:hover, .saga-res__section .bblock-button__link:focus {
   background-color: #FFB990;
   color: #110F10;
+}
+
+.saga-res__section .bblock-button__link span {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+  opacity: 0 !important;
 }
 
 .saga-res__subhead {
