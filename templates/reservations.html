@@ -102,4 +102,13 @@
     {% endif %}
   </div>
 </article>
+
+<script src="https://widgets.resy.com/embed.js"></script>
+<script>
+    resyWidget.addButton(document.querySelector('.saga-res__section a'), {"venueId":52855,"apiKey":"jcsnxm3s11u5KVsN4fyG4DwcqHgpStvH","replace":false,});
+
+    document.querySelector('.saga-res__section a').addEventListener('click', function(e){
+      e.preventDefault();
+    });
+</script>
 {% endblock %}
