@@ -2251,7 +2251,7 @@ body:not(.template-reservations-html) .page-header__content > * {
   max-width: 35.1rem;
   width: auto;
   height: auto;
-  color: #424242;
+  color: #FFB990;
 }
 
 @media (max-width: 767px) {
@@ -2259,7 +2259,6 @@ body:not(.template-reservations-html) .page-header__content > * {
     max-width: 32.1rem;
     width: 100%;
     height: auto;
-    color: #FFFFFF;
   }
 }
 

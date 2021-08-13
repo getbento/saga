@@ -146,12 +146,11 @@ $pine-width : 45rem;
       max-width: 35.1rem;
       width: auto;
       height: auto;
-      color: $gray;
+      color: $peach;
       @include for-size(mobile) {
         max-width: 32.1rem;
         width: 100%;
         height: auto;
-        color: $white;
       }
     }
 
