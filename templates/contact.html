@@ -10,6 +10,11 @@
   {% include "template-parts/pageheader-default.html" %}
 
   <div class="content-margins content-container">
+    {% if current.fields.content.content %}
+      <div class="contact-content">
+        {{ current.fields.content.content }}
+      </div>
+    {% endif %}
     <div class="saga-bordered-title-box__title saga-form__title">
       <h2 class="saga-bordered-title-box__title__text saga-form__title__text">
         Contact Inquiry

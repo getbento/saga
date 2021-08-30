@@ -23,7 +23,7 @@
           <h3 class="saga-res__subhead">Call Us</h3>
           <p>{{ item.phone }}</p>
         </div>
-        <div class="saga-res__section">
+        <div class="saga-res__section reservation">
           <h3 class="saga-res__subhead">Reserve Online</h3>
           <div class="bblock-button">
             <a class="bblock-button__link" href="{{ item.link.url }}"
@@ -105,9 +105,9 @@
 
 <script src="https://widgets.resy.com/embed.js"></script>
 <script>
-    resyWidget.addButton(document.querySelector('.saga-res__section a'), {"venueId":52855,"apiKey":"jcsnxm3s11u5KVsN4fyG4DwcqHgpStvH","replace":false,});
+    resyWidget.addButton(document.querySelector('.saga-res__section.reservation a'), {"venueId":52855,"apiKey":"jcsnxm3s11u5KVsN4fyG4DwcqHgpStvH","replace":false,});
 
-    document.querySelector('.saga-res__section a').addEventListener('click', function(e){
+    document.querySelector('.saga-res__section.reservation a').addEventListener('click', function(e){
       e.preventDefault();
     });
 </script>
