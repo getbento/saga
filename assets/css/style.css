@@ -239,6 +239,10 @@ ul, ol {
   list-style: none;
 }
 
+i, em {
+  font-style: italic;
+}
+
 input, button {
   -webkit-appearance: none;
   -moz-appearance: none;
