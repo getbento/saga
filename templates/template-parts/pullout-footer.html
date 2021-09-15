@@ -16,5 +16,13 @@
     </a>
   </li>
   {% endfor %}
+  {% if theme.options.navigation.socials.instagram %}
+  <li class="pull-out__logos-item">
+    <a class="pull-out__logos-item__link" href="{{ theme.options.navigation.socials.instagram }}" target="_blank">
+      {% include "svg/instagram.html" %}
+      <span class="screen-reader-text">Find Saga on Instagram</span>
+    </a>
+  </li>
+  {% endif %}
 </ul>
 {% endif %}

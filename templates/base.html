@@ -305,6 +305,14 @@
                   <a class="site-footer__nav__list-item__link" href="{{ item.url }}">{{ item.name }}</a>
                 </li>
               {% endfor %}
+              {% if theme.options.navigation.socials.instagram %}
+              <li class="site-footer__nav__list-item">
+                <a class="site-footer__nav__list-item__link" href="{{ theme.options.navigation.socials.instagram }}" target="_blank">
+                  {% include "svg/instagram.html" %}
+                  <span class="screen-reader-text">Find Saga on Instagram</span>
+                </a>
+              </li>
+              {% endif %}
             </ul>
             {% endif %}
             {% if navs.footer|length == 0 %}
