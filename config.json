@@ -1,199 +1,198 @@
 {
-    "theme": {
-        "name": "Broth (Boilerplate theme)",
-        "author": "The BentoBox Team",
-        "fields": {
-            "site": {
-              "title": "Site Options",
-              "type": "section",
-              "items": {
-                "tagline": {
-                  "title": "Tagline",
-                  "type": "text"
-                },
-                "newsletter": {
-            			"title": "Newsletter Capture"
-            			"type": "section",
-            			"items": {
-            				"cta": {
-            					"title": "CTA",
-            					"type": "text"
-            				},
-            				"img": {
-            					"title": "Image",
-            					"type": "image"
-            				}
-            			}
-            		}
-              }
-            },
-            "footer": {
-        			"title": "Footer",
-        			"type": "section",
-        			"items": {
-        				"blurb": {
-        					"title": "Blurb",
-        					"type": "wysiwyg"
-        				},
-                "copyright": {
-                  "title": "Copyright",
-                  "type": "wysiwyg"
-                }
-        			}
-        		},
-            "navigation": {
-              "title": "Navigation",
-              "type": "section",
-              "items": {
-                "backgrounds": {
-                  "title": "Backgrounds",
-                  "type": "section",
-                  "items": {
-                    "bg": {
-                      "title": "Default Background",
-                      "type": "image"
-                    },
-                    "hover_images": {
-                      "title": "Hover Backgrounds",
-                      "type": "repeater",
-                      "items": {
-                        "img": "image"
-                      }
-                    }
-                  }
-                },
-                "location": {
-                  "title": "Location",
-                  "type": "section",
-                  "items": {
-                    "address_1": {
-                      "title": "Address (Line 1)",
-                      "type": "text"
-                    },
-                    "address_2": {
-                      "title": "Address (Line 2)",
-                      "type": "text"
-                    },
-                    "address_3": {
-                      "title": "Address (Line 3)",
-                      "type": "text"
-                    }
-                  }
-                },
-                "hours": {
-                  "title": "Hours",
-                  "type": "repeater",
-                  "items": {
-                    "days": {
-                      "title": "Days",
-                      "type": "text"
-                    },
-                    "hours": {
-                      "title": "Hours",
-                      "type": "text"
-                    }
-                  }
-                },
-                "logos": {
-                  "title": "Logos",
-                  "type": "repeater",
-                  "items": {
-                    "logo": {
-                      "title": "Logo",
-                      "type": "image"
-                    },
-                    "link": {
-            					"title": "Link",
-            					"type": "section",
-            					"items": {
-            						"url": {
-            							"title": "URL",
-            							"type": "text"
-            						},
-            						"target": {
-            							"title": "Open link in new tab?",
-            							"type": "boolean"
-            						}
-            					}
-            				}
-                  }
-                },
-                "socials": {
-                  "title": "Social Media",
-                  "type": "section",
-                  "items": {
-                    "instagram": {
-                      "title": "Instagram",
-                      "type": "text"
-                    }
-                  }
-                }
-              }
-            },
-            "popup": {
-              "title": "Site Popup",
-              "type": "section",
-              "items": {
-                "active": {
-                  "title": "Popup is active?",
-                  "type": "boolean"
-                },
-                "title": {
-                  "title": "Title",
-                  "type": "text"
-                },
-                "content": {
-                  "title": "Content",
-                  "type": "wysiwyg"
-                },
-                "link": {
-        					"title": "Link",
-        					"type": "section",
-        					"items": {
-        						"url": {
-        							"title": "URL",
-        							"type": "text"
-        						},
-        						"title": {
-        							"title": "Title",
-        							"type": "text"
-        						},
-        						"target": {
-        							"title": "Open link in new tab?",
-        							"type": "boolean"
-        						}
-        					}
-        				},
-                "propid": {
-                  "title": "Popup ID",
-                  "type": "text",
-                  "helper": "A unique JSON property safe string used to identify this popup. Change this when launching a new sitewide popup to ensure that users who have dismissed previous popups will see your new content.",
-                }
-              }
-            },
-            "custom_styles": {
-                "name": "custom_styles",
-                "type": "section",
-                "items": {
-                    "CSS": "code",
-                    "JavaScript": "code",
-                    "bootstrap_variable_overrides": "code"
-                }
-            }
-        }
-    },
-    "navs": [
-      {
-        "name": "Main Navigation",
-        "slug": "main"
-      },
-      {
-        "name": "Footer",
-        "slug": "footer"
-      },
-      {
-        "name": "Side Navigation",
-        "slug": "side"
-      }
-    ]
+	"theme": {
+		"name": "Broth (Boilerplate theme)",
+		"author": "The BentoBox Team",
+		"fields": {
+			"site": {
+				"title": "Site Options",
+				"type": "section",
+				"items": {
+					"tagline": {
+						"title": "Tagline",
+						"type": "text"
+					},
+					"newsletter": {
+						"title": "Newsletter Capture",
+						"type": "section",
+						"items": {
+							"cta": {
+								"title": "CTA",
+								"type": "text"
+							},
+							"img": {
+								"title": "Image",
+								"type": "image"
+							}
+						}
+					}
+				}
+			},
+			"footer": {
+				"title": "Footer",
+				"type": "section",
+				"items": {
+					"blurb": {
+						"title": "Blurb",
+						"type": "wysiwyg"
+					},
+					"copyright": {
+						"title": "Copyright",
+						"type": "wysiwyg"
+					}
+				}
+			},
+			"navigation": {
+				"title": "Navigation",
+				"type": "section",
+				"items": {
+					"backgrounds": {
+						"title": "Backgrounds",
+						"type": "section",
+						"items": {
+							"bg": {
+								"title": "Default Background",
+								"type": "image"
+							},
+							"hover_images": {
+								"title": "Hover Backgrounds",
+								"type": "repeater",
+								"items": {
+									"img": "image"
+								}
+							}
+						}
+					},
+					"location": {
+						"title": "Location",
+						"type": "section",
+						"items": {
+							"address_1": {
+								"title": "Address (Line 1)",
+								"type": "text"
+							},
+							"address_2": {
+								"title": "Address (Line 2)",
+								"type": "text"
+							},
+							"address_3": {
+								"title": "Address (Line 3)",
+								"type": "text"
+							}
+						}
+					},
+					"hours": {
+						"title": "Hours",
+						"type": "repeater",
+						"items": {
+							"days": {
+								"title": "Days",
+								"type": "text"
+							},
+							"hours": {
+								"title": "Hours",
+								"type": "text"
+							}
+						}
+					},
+					"logos": {
+						"title": "Logos",
+						"type": "repeater",
+						"items": {
+							"logo": {
+								"title": "Logo",
+								"type": "image"
+							},
+							"link": {
+								"title": "Link",
+								"type": "section",
+								"items": {
+									"url": {
+										"title": "URL",
+										"type": "text"
+									},
+									"target": {
+										"title": "Open link in new tab?",
+										"type": "boolean"
+									}
+								}
+							}
+						}
+					},
+					"socials": {
+						"title": "Social Media",
+						"type": "section",
+						"items": {
+							"instagram": {
+								"title": "Instagram",
+								"type": "text"
+							}
+						}
+					}
+				}
+			},
+			"popup": {
+				"title": "Site Popup",
+				"type": "section",
+				"items": {
+					"active": {
+						"title": "Popup is active?",
+						"type": "boolean"
+					},
+					"title": {
+						"title": "Title",
+						"type": "text"
+					},
+					"content": {
+						"title": "Content",
+						"type": "wysiwyg"
+					},
+					"link": {
+						"title": "Link",
+						"type": "section",
+						"items": {
+							"url": {
+								"title": "URL",
+								"type": "text"
+							},
+							"title": {
+								"title": "Title",
+								"type": "text"
+							},
+							"target": {
+								"title": "Open link in new tab?",
+								"type": "boolean"
+							}
+						}
+					},
+					"propid": {
+						"title": "Popup ID",
+						"type": "text",
+						"helper": "A unique JSON property safe string used to identify this popup. Change this when launching a new sitewide popup to ensure that users who have dismissed previous popups will see your new content."
+					}
+				}
+			},
+			"custom_styles": {
+				"name": "custom_styles",
+				"type": "section",
+				"items": {
+					"CSS": "code",
+					"JavaScript": "code",
+					"bootstrap_variable_overrides": "code"
+				}
+			}
+		}
+	},
+	"navs": [{
+			"name": "Main Navigation",
+			"slug": "main"
+		},
+		{
+			"name": "Footer",
+			"slug": "footer"
+		},
+		{
+			"name": "Side Navigation",
+			"slug": "side"
+		}
+	]
 }
