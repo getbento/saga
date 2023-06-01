@@ -114,10 +114,6 @@
             {% endfor %}
           </ul>
           {% endif %}
-
-          {% if navs.side|length == 0 %}
-            <em>Add nav items in the Pages/Nav sections of the admin to get started</em>
-          {% endif %}
         </nav>
         <button class="pull-out__toggle" type="button" aria-expanded="false" aria-controls="pull-out">
           <span class="screen-reader-text">Menu</span>
@@ -228,10 +224,6 @@
               {% endfor %}
             </ul>
             {% endif %}
-
-            {% if navs.side|length == 0 %}
-              <em>Add nav items in the Pages/Nav sections of the admin to get started</em>
-            {% endif %}
           </nav>
         </div>
       </div>
@@ -314,9 +306,6 @@
               </li>
               {% endif %}
             </ul>
-            {% endif %}
-            {% if navs.footer|length == 0 %}
-              <em>Add nav items in the Pages/Nav sections of the admin to see your footer nav</em>
             {% endif %}
           </nav>
           {% if theme.options.footer.copyright %}
